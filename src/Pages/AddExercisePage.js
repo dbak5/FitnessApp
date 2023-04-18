@@ -1,7 +1,7 @@
 import logo from "../Assets/Images/logo.svg";
 import "../Assets/Styles/App.css";
 
-function AddExercise() {
+export default function AddExercise() {
   return (
     <div className="AddExercise">
       <header className="App-header">
@@ -21,5 +21,3 @@ function AddExercise() {
     </div>
   );
 }
-
-export default AddExercise;
