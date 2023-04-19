@@ -1,9 +1,5 @@
 import * as React from "react";
 
-export default function Footer() {
-  return (
-    <div>
-      <p>Footer</p>
-    </div>
-  );
+export default function Footer({ children }) {
+  return <div>{children}</div>;
 }

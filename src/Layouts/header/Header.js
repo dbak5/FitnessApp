@@ -5,11 +5,10 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import FormGroup from "@mui/material/FormGroup";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 
-export default function MenuAppBar() {
+export default function Header({ menu }) {
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -27,7 +26,6 @@ export default function MenuAppBar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <FormGroup></FormGroup>
       <AppBar position="static">
         <Toolbar>
           {auth && (
@@ -42,7 +40,6 @@ export default function MenuAppBar() {
               >
                 <MenuIcon />
               </IconButton>
-
               <Menu
                 anchorEl={anchorEl}
                 anchorOrigin={{

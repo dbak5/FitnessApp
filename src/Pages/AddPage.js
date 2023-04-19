@@ -1,9 +1,9 @@
 import React from "react";
 import DatePicker from "../components/calendar/DatePicker";
 
-export default function HistoryPage({ children }) {
+export default function AddPage({ children }) {
   return (
-    <div className="historyPage">
+    <div className="addPage">
       <DatePicker />
       {children}
     </div>

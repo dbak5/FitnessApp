@@ -1,13 +1,13 @@
 import * as React from "react";
-import AppBar from "../Header/AppBar";
-import PageContainer from "../../Components/Containers/PageContainer";
-import Footer from "../Footer/Footer";
+import AppBar from "../header/Header";
+import PageContainer from "../../components/containers/PageContainer";
+import Footer from "../footer/Footer";
 
-export default function Page() {
+export default function PageLayout({ children }) {
   return (
     <div>
       <AppBar />
-      <PageContainer />
+      <PageContainer>{children}</PageContainer>
       <Footer />
     </div>
   );

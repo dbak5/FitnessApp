@@ -1,5 +1,5 @@
-import SimpleAccordion from "../Components/Accordion/SimpleAccordion";
+import * as React from "react";
 
-export default function PBPage() {
-  return <SimpleAccordion />;
+export default function PBPage({ children }) {
+  return <div className="pbPage">{children}</div>;
 }
