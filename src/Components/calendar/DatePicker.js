@@ -36,7 +36,7 @@ const DAYS = [
 export default function ToggleDays() {
   const [days, setDays] = useState([0, 2, 3]);
   return (
-    <>
+    <div className="weekDayPicker">
       <ToggleButtonGroup
         size="small"
         arial-label="Days of the week"
@@ -49,6 +49,6 @@ export default function ToggleDays() {
           </ToggleButton>
         ))}
       </ToggleButtonGroup>
-    </>
+    </div>
   );
 }

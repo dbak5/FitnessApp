@@ -6,9 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 function App() {
   return (
     <PageLayout className="App">
-      <BrowserRouter>
-        <Links />
-      </BrowserRouter>
+      <Links />
     </PageLayout>
   );
 }

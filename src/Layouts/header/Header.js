@@ -5,16 +5,20 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
+import { BrowserRouter, NavLink } from "react-router-dom";
+import MenuItem from "@mui/material/MenuItem";
 
-export default function Header({ menu }) {
-  const [auth, setAuth] = React.useState(true);
+export default function Header() {
+  const [auth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const handleChange = (event) => {
-    setAuth(event.target.checked);
-  };
+  // const [auth, setAuth] = React.useState(true);
+  // const [anchorEl, setAnchorEl] = React.useState(null);
+
+  // const handleChange = (event) => {
+  //   setAuth(event.target.checked);
+  // };
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -40,25 +44,38 @@ export default function Header({ menu }) {
               >
                 <MenuIcon />
               </IconButton>
-              <Menu
-                anchorEl={anchorEl}
-                anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "left",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "left",
-                }}
-                open={Boolean(anchorEl)}
-                onClose={handleClose}
-              >
-                <MenuItem onClick={handleClose}>Add Exercise</MenuItem>
-                <MenuItem onClick={handleClose}>History</MenuItem>
-                <MenuItem onClick={handleClose}>Library</MenuItem>
-                <MenuItem onClick={handleClose}>PBs</MenuItem>
-              </Menu>
+              <BrowserRouter>
+                <Menu
+                  anchorEl={anchorEl}
+                  anchorOrigin={{
+                    vertical: "top",
+                    horizontal: "left",
+                  }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "left",
+                  }}
+                  open={Boolean(anchorEl)}
+                  onClose={handleClose}
+                >
+                  <MenuItem onClick={handleClose}>
+                    <NavLink to="/">Home </NavLink>
+                  </MenuItem>
+                  <MenuItem onClick={handleClose}>
+                    <NavLink to="/add">Add Exercise</NavLink>
+                  </MenuItem>
+                  <MenuItem onClick={handleClose}>
+                    <NavLink to="/history">History</NavLink>
+                  </MenuItem>
+                  <MenuItem onClick={handleClose}>
+                    <NavLink to="/library">Library</NavLink>
+                  </MenuItem>
+                  <MenuItem onClick={handleClose}>
+                    <NavLink to="/pb">PBs</NavLink>
+                  </MenuItem>
+                </Menu>
+              </BrowserRouter>
             </div>
           )}
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
