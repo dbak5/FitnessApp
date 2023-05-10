@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Menu from "@mui/material/Menu";
-import { BrowserRouter, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import MenuItem from "@mui/material/MenuItem";
 
 export default function Header() {
@@ -44,7 +44,7 @@ export default function Header() {
               >
                 <MenuIcon />
               </IconButton>
-              <BrowserRouter>
+              <>
                 <Menu
                   anchorEl={anchorEl}
                   anchorOrigin={{
@@ -63,7 +63,10 @@ export default function Header() {
                     <NavLink to="/">Home </NavLink>
                   </MenuItem>
                   <MenuItem onClick={handleClose}>
-                    <NavLink to="/add">Add Exercise</NavLink>
+                    <NavLink to="/activity">Activity</NavLink>
+                  </MenuItem>
+                  <MenuItem onClick={handleClose}>
+                    <NavLink to="/program">Create program</NavLink>
                   </MenuItem>
                   <MenuItem onClick={handleClose}>
                     <NavLink to="/history">History</NavLink>
@@ -75,7 +78,7 @@ export default function Header() {
                     <NavLink to="/pb">PBs</NavLink>
                   </MenuItem>
                 </Menu>
-              </BrowserRouter>
+              </>
             </div>
           )}
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
