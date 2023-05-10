@@ -10,8 +10,10 @@ export default function LibraryPage({ children }) {
       <SearchInput />
       <ExercisesTable />
       <Button>Add New Exercise</Button>
-      <p>Search for exercise</p>
-      <p>Categories: bodybuilding, weightlifting and conditioning</p>
+      <p>filter exercises</p>
+      <p>
+        When check boxes selected butto nto appear to add to program or activity
+      </p>
       <p>Bodybuilding categories: Core, Upper, Legs</p>
       <p>Contains all workout activities and the dates</p>
       <p>Table of activities by exercise</p>

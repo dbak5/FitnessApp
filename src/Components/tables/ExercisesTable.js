@@ -18,6 +18,11 @@ const columns = [
     headerName: "Category",
     width: 130,
   },
+  {
+    field: "bodyPart",
+    headerName: "Body Part",
+    width: 130,
+  },
 ];
 
 const rows = [
@@ -63,13 +68,14 @@ const rows = [
   },
   {
     id: 5,
-    exerciseName: "Snatch balance",
-    pb: "60kg",
+    exerciseName: "Bicep curls",
+    pb: "5kg",
     sets: 4,
-    reps: 3,
-    equipment: "BB",
+    reps: 5,
+    equipment: "DB",
     lastActivity: "25/01/2023",
-    category: "Weightlifting",
+    category: "Bodybuilding",
+    bodyPart: "Upper",
   },
   {
     id: 6,
