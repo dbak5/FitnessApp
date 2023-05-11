@@ -1,6 +1,6 @@
 import * as React from "react";
 import { DataGrid } from "@mui/x-data-grid";
-import { RowData } from "./RowData";
+import { RowData } from "../../assets/dummy/RowData";
 
 const columns = [
   { field: "id", headerName: "ID", width: 70 },

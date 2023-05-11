@@ -1,20 +1,20 @@
 import React from "react";
 import ExercisesTable from "../../components/tables/ExercisesTable";
-import SearchInput from "../../components/inputs/SearchInput";
+import SearchInput from "../../components/inputs/SearchInputMultiSelect";
 import { NavLink } from "react-router-dom";
 import TableCard from "../../components/cards/TableCard";
 import AddButton from "../../components/buttons/AddButton";
-
+import { ExerciseList } from "../../assets/dummy/ExerciseList";
 export default function LibraryPage({ children }) {
   return (
     <div className="libraryPage">
       <h1>LIBRARY</h1>
-      <SearchInput />
+      <SearchInput options={ExerciseList} />
       <TableCard>
         <ExercisesTable />
       </TableCard>
       <AddButton>
-        <NavLink to="/addnewexercise">Add New Exercise</NavLink>
+        <NavLink to="/addnewexercise">New Exercise</NavLink>
       </AddButton>
       <p>filter exercises</p>
       <p>
