@@ -1,12 +1,12 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import ProgramPage from "./pages/ProgramPage";
-import ActivityPage from "./pages/ActivityPage";
-import LibraryPage from "./pages/LibraryPage";
-import PBPage from "./pages/PBPage";
-import HomePage from "./pages/HomePage";
-import ExercisePage from "./pages/ExercisePage";
-import AddNewExercisePage from "./pages/AddNewExercisePage";
+import ProgramPage from "./pages/programPage/ProgramPage";
+import ActivityPage from "./pages/activityPage/ActivityPage";
+import LibraryPage from "./pages/libraryPage/LibraryPage";
+import PBPage from "./pages/pbPage/PBPage";
+import HomePage from "./pages/homePage/HomePage";
+import ExercisePage from "./pages/exercisePage/ExercisePage";
+import AddNewExercisePage from "./pages/addNewExercisePage/AddNewExercisePage";
 
 export default function Links() {
   return (

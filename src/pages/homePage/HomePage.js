@@ -1,5 +1,5 @@
 import React from "react";
-import DatePicker from "../components/calendar/DatePicker";
+import DatePicker from "../../components/calendar/DatePicker";
 
 export default function HomePage({ children }) {
   return (

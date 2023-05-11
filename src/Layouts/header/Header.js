@@ -69,9 +69,6 @@ export default function Header() {
                     <NavLink to="/program">Create program</NavLink>
                   </MenuItem>
                   <MenuItem onClick={handleClose}>
-                    <NavLink to="/history">History</NavLink>
-                  </MenuItem>
-                  <MenuItem onClick={handleClose}>
                     <NavLink to="/library">Library</NavLink>
                   </MenuItem>
                   <MenuItem onClick={handleClose}>
