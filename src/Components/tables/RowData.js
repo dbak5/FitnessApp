@@ -9,6 +9,8 @@ export const RowData = [
     lastActivity: "20/02/2023",
     category: "Weightlifting",
     bodyPart: "Upper",
+    week: "1",
+    day: "1",
   },
   {
     id: 2,
@@ -20,6 +22,8 @@ export const RowData = [
     lastActivity: "02/03/2023",
     category: "Weightlifting",
     bodyPart: "Upper",
+    week: "2",
+    day: "3",
   },
   {
     id: 3,
@@ -31,6 +35,8 @@ export const RowData = [
     lastActivity: "05/06/2023",
     category: "Weightlifting",
     bodyPart: "Upper",
+    week: "3",
+    day: "2",
   },
   {
     id: 4,
@@ -42,6 +48,8 @@ export const RowData = [
     lastActivity: "15/09/2023",
     category: "Weightlifting",
     bodyPart: "Upper",
+    week: "3",
+    day: "1",
   },
   {
     id: 5,
@@ -53,6 +61,8 @@ export const RowData = [
     lastActivity: "25/01/2023",
     category: "Bodybuilding",
     bodyPart: "Upper",
+    week: "4",
+    day: "3",
   },
   {
     id: 6,
@@ -64,6 +74,8 @@ export const RowData = [
     lastActivity: "07/08/2023",
     category: "Weightlifting",
     bodyPart: "Upper",
+    week: "4",
+    day: "2",
   },
   {
     id: 7,
@@ -75,6 +87,8 @@ export const RowData = [
     lastActivity: "06/07/2023",
     category: "Weightlifting",
     bodyPart: "Upper",
+    week: "5",
+    day: "1",
   },
   {
     id: 8,
@@ -86,6 +100,8 @@ export const RowData = [
     lastActivity: "07/10/2023",
     category: "Weightlifting",
     bodyPart: "Upper",
+    week: "5",
+    day: "2",
   },
   {
     id: 9,
@@ -97,5 +113,7 @@ export const RowData = [
     lastActivity: "14/02/2023",
     category: "Weightlifting",
     bodyPart: "Upper",
+    week: "5",
+    day: "3",
   },
 ];

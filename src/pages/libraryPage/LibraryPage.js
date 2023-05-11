@@ -1,9 +1,9 @@
 import React from "react";
 import ExercisesTable from "../../components/tables/ExercisesTable";
-import Button from "@mui/material/Button";
 import SearchInput from "../../components/inputs/SearchInput";
 import { NavLink } from "react-router-dom";
 import TableCard from "../../components/cards/TableCard";
+import AddButton from "../../components/buttons/AddButton";
 
 export default function LibraryPage({ children }) {
   return (
@@ -13,9 +13,9 @@ export default function LibraryPage({ children }) {
       <TableCard>
         <ExercisesTable />
       </TableCard>
-      <Button>
+      <AddButton>
         <NavLink to="/addnewexercise">Add New Exercise</NavLink>
-      </Button>
+      </AddButton>
       <p>filter exercises</p>
       <p>
         When check boxes selected butto nto appear to add to program or activity

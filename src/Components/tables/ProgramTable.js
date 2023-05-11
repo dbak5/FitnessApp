@@ -54,7 +54,7 @@ EditToolbar.propTypes = {
   setRows: PropTypes.func.isRequired,
 };
 
-export default function ActivityTable() {
+export default function ProgramTable() {
   const [rows, setRows] = React.useState(RowData);
   const [rowModesModel, setRowModesModel] = React.useState({});
 
@@ -101,6 +101,13 @@ export default function ActivityTable() {
   };
 
   const columns = [
+    {
+      field: "day",
+      headerName: "day",
+      type: "number",
+      width: 70,
+      editable: true,
+    },
     {
       field: "exerciseName",
       headerName: "Exercise",

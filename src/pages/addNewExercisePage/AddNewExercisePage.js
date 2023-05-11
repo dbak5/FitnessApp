@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "@mui/material/Button";
+import AddButton from "../../components/buttons/AddButton";
 
 export default function AddNewExercisePage({ children }) {
   return (
@@ -9,7 +9,7 @@ export default function AddNewExercisePage({ children }) {
       <p>Categories: bodybuilding, weightlifting and conditioning</p>
       <p>Bodybuilding categories: Core, Upper, Legs</p>
       <p>Click on exercise to go to exercise page</p>
-      <Button>Add to library</Button>
+      <AddButton>Add to library</AddButton>
       {children}
     </div>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "@mui/material/Button";
+import AddButton from "../../components/buttons/AddButton";
 
 export default function ExercisePage({ children }) {
   return (
@@ -10,8 +10,8 @@ export default function ExercisePage({ children }) {
       <p>Bodybuilding categories: Core, Upper, Legs</p>
       <p>Progressive overload calculations for bodybuilding exercises</p>
       <p>Button to view all historical activities - 2 years??</p>
-      <Button variant="outlined">Add to program</Button>
-      <Button variant="outlined">Add to activity</Button>
+      <AddButton>Add to program</AddButton>
+      <AddButton>Add to activity</AddButton>
       {children}
     </div>
   );
