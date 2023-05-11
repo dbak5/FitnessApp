@@ -1,5 +1,5 @@
 import React from "react";
-import AddButton from "../../components/buttons/AddButton";
+import AddButton from "../buttons/AddButton";
 import FormControl from "@mui/material/FormControl";
 import TextInput from "../inputs/TextInput";
 import SearchInputControlledSelect from "../inputs/SearchInputControlledSelect";
@@ -10,9 +10,9 @@ import {
   EquipmentList,
 } from "../../assets/dummy/ExerciseList";
 
-export default function NewExerciseForm({ children }) {
+export default function CreateExerciseForm({ children }) {
   return (
-    <div className="newExerciseForm">
+    <div className="createExerciseForm">
       <FormControl>
         <TextInput label="Exercise" />
         <SearchInputControlledSelect label="Category" options={CategoryList} />

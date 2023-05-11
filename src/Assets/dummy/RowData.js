@@ -126,3 +126,9 @@ export const RowData = [
     pbDate: "20/02/2023",
   },
 ];
+
+export const ProgramList = [
+  { id: 1, programName: "Weightlifting Block 1" },
+  { id: 2, programName: "Weightlifting Block 2" },
+  { id: 3, programName: "Bodybuilding" },
+];

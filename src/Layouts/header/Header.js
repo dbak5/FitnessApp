@@ -66,13 +66,19 @@ export default function Header() {
                     <NavLink to="/activity">Activity</NavLink>
                   </MenuItem>
                   <MenuItem onClick={handleClose}>
-                    <NavLink to="/program">Create program</NavLink>
+                    <NavLink to="/program">Programs</NavLink>
                   </MenuItem>
                   <MenuItem onClick={handleClose}>
                     <NavLink to="/library">Library</NavLink>
                   </MenuItem>
                   <MenuItem onClick={handleClose}>
                     <NavLink to="/pb">PBs</NavLink>
+                  </MenuItem>
+                  <MenuItem onClick={handleClose}>
+                    <NavLink to="/createexercise">Create New Exercise</NavLink>
+                  </MenuItem>
+                  <MenuItem onClick={handleClose}>
+                    <NavLink to="/createprogram">Create New Program</NavLink>
                   </MenuItem>
                 </Menu>
               </>

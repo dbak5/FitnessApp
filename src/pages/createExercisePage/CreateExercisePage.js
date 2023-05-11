@@ -1,11 +1,11 @@
 import React from "react";
-import NewExerciseForm from "../../components/forms/NewExerciseForm";
+import CreateExerciseForm from "../../components/forms/CreateExerciseForm";
 
 export default function AddNewExercisePage({ children }) {
   return (
     <div className="addNewExercisePage">
       <h1>ADD NEW EXERCISE TO LIBRARY</h1>
-      <NewExerciseForm />
+      <CreateExerciseForm />
       <p>check for duplicate exercises</p>
       {children}
     </div>

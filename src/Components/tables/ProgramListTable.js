@@ -1,21 +1,14 @@
 import * as React from "react";
 import { DataGrid } from "@mui/x-data-grid";
-import { RowData } from "../../assets/dummy/RowData";
+import { ProgramList } from "../../assets/dummy/RowData";
 
-const columns = [
-  { field: "exerciseName", headerName: "Name", width: 130 },
-  {
-    field: "pbDate",
-    headerName: "Date",
-    width: 130,
-  },
-  { field: "pb", headerName: "PB", width: 90 },
-];
+const columns = [{ field: "programName", headerName: "Name", width: 300 }];
+
 export default function PBTable() {
   return (
     <div style={{ height: 400, width: "100%" }}>
       <DataGrid
-        rows={RowData}
+        rows={ProgramList}
         columns={columns}
         initialState={{
           pagination: {
