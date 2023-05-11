@@ -11,6 +11,7 @@ export const RowData = [
     bodyPart: "Upper",
     week: "1",
     day: "1",
+    pbDate: "20/02/2023",
   },
   {
     id: 2,
@@ -24,6 +25,7 @@ export const RowData = [
     bodyPart: "Upper",
     week: "2",
     day: "3",
+    pbDate: "20/02/2023",
   },
   {
     id: 3,
@@ -37,6 +39,7 @@ export const RowData = [
     bodyPart: "Upper",
     week: "3",
     day: "2",
+    pbDate: "20/02/2023",
   },
   {
     id: 4,
@@ -50,6 +53,7 @@ export const RowData = [
     bodyPart: "Upper",
     week: "3",
     day: "1",
+    pbDate: "20/02/2023",
   },
   {
     id: 5,
@@ -63,6 +67,7 @@ export const RowData = [
     bodyPart: "Upper",
     week: "4",
     day: "3",
+    pbDate: "20/02/2023",
   },
   {
     id: 6,
@@ -76,6 +81,7 @@ export const RowData = [
     bodyPart: "Upper",
     week: "4",
     day: "2",
+    pbDate: "20/02/2023",
   },
   {
     id: 7,
@@ -89,6 +95,7 @@ export const RowData = [
     bodyPart: "Upper",
     week: "5",
     day: "1",
+    pbDate: "20/02/2023",
   },
   {
     id: 8,
@@ -102,6 +109,7 @@ export const RowData = [
     bodyPart: "Upper",
     week: "5",
     day: "2",
+    pbDate: "20/02/2023",
   },
   {
     id: 9,
@@ -115,5 +123,6 @@ export const RowData = [
     bodyPart: "Upper",
     week: "5",
     day: "3",
+    pbDate: "20/02/2023",
   },
 ];

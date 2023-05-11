@@ -5,11 +5,10 @@ import { RowData } from "../../assets/dummy/RowData";
 const columns = [
   { field: "exerciseName", headerName: "Exercise", width: 130 },
   {
-    field: "lastActivity",
-    headerName: "Last Activity",
+    field: "pbDate",
+    headerName: "Date",
     width: 130,
   },
-  { field: "reps", headerName: "Reps", type: "number", width: 70 },
   { field: "pb", headerName: "PB", width: 90 },
 ];
 

@@ -79,7 +79,7 @@ export default function Header() {
             </div>
           )}
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Photos
+            Fitness App
           </Typography>
         </Toolbar>
       </AppBar>

@@ -7,7 +7,6 @@ export default function AddNewExercisePage({ children }) {
       <h1>ADD NEW EXERCISE TO LIBRARY</h1>
       <NewExerciseForm />
       <p>check for duplicate exercises</p>
-      <p>Bodybuilding categories: Core, Upper, Legs</p>
       {children}
     </div>
   );

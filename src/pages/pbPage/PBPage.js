@@ -5,7 +5,7 @@ import PBTable from "../../components/tables/PBTable";
 export default function PBPage({ children }) {
   return (
     <div className="pbPage">
-      <h1>PBS</h1>
+      <h1>1 RM PR</h1>
       <TableCard>
         <PBTable />
       </TableCard>
