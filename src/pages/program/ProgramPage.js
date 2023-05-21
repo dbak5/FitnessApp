@@ -1,14 +1,19 @@
 import React from "react";
-import ListTable from "../components/generic/tables/ListTable";
+import ListTable from "../../components/tables/ListTable";
+import { NavLink } from "react-router-dom";
+import Button from "@mui/material/Button";
 import {
   ProgramList,
   ProgramColumns,
   ProgramListSimple,
-} from "../assets/dummy/ProgramExample";
-import ProgramDetailModal from "../components/program/ProgramDetailModal";
-import AddModal from "../components/generic/modals/AddModal";
-import AddProgramOptions from "../components/program/AddProgramOptions";
-import CreateProgramForm from "../components/program/CreateProgramForm";
+} from "../../assets/dummy/ProgramExample";
+import AddModal from "../../components/modals/AddModal";
+import AddProgramOptions from "./AddProgramOptions";
+import CreateProgramForm from "./CreateProgramForm";
+import {
+  ProgramExample,
+  ColumnsProgramExample,
+} from "../../assets/dummy/ProgramExample";
 
 export default function ProgramPage({ children }) {
   return (
@@ -35,7 +40,16 @@ export default function ProgramPage({ children }) {
       <AddModal label="Add to calendar" options={ProgramListSimple}>
         <AddProgramOptions />
       </AddModal>
-      <ProgramDetailModal />
+      <AddModal label="Show program detail">
+        <ListTable
+          data={ProgramExample}
+          columns={ColumnsProgramExample}
+          checkboxSelection={false}
+        />
+        <Button>
+          <NavLink to="/editprogram">Make changes</NavLink>
+        </Button>
+      </AddModal>
       {children}
     </div>
   );

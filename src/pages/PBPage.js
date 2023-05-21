@@ -1,5 +1,5 @@
 import * as React from "react";
-import ListTable from "../components/generic/tables/ListTable";
+import ListTable from "../components/tables/ListTable";
 import { PbData, Columns } from "../assets/dummy/PbExample";
 
 export default function PBPage({ children }) {

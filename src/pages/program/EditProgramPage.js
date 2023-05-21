@@ -1,9 +1,9 @@
 import * as React from "react";
-import ListTable from "../components/generic/tables/ListTable";
+import ListTable from "../../components/tables/ListTable";
 import {
   ProgramExample,
   ColumnsProgramExample,
-} from "../assets/dummy/ProgramExample";
+} from "../../assets/dummy/ProgramExample";
 import Button from "@mui/material/Button";
 
 export default function EditProgramPage({ children }) {

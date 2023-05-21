@@ -1,13 +1,15 @@
 import React from "react";
-import ListTable from "../components/generic/tables/ListTable";
+import ListTable from "../../components/tables/ListTable";
+import { NavLink } from "react-router-dom";
+import Button from "@mui/material/Button";
 import {
   ExerciseData,
   ExerciseColumns,
   ExerciseList,
-} from "../assets/dummy/ExerciseExample";
-import AddModal from "../components/generic/modals/AddModal";
-import AddExerciseOptions from "../components/exercise/AddExerciseOptions";
-import CreateExerciseForm from "../components/exercise/CreateExerciseForm";
+} from "../../assets/dummy/ExerciseExample";
+import AddModal from "../../components/modals/AddModal";
+import AddExerciseOptions from "./AddExerciseOptions";
+import CreateExerciseForm from "./CreateExerciseForm";
 
 export default function ExercisePage({ children }) {
   return (
@@ -31,6 +33,9 @@ export default function ExercisePage({ children }) {
       <AddModal label="Add to calendar" options={ExerciseList}>
         <AddExerciseOptions />
       </AddModal>
+      <Button>
+        <NavLink to="/editexercise">Edit Exercise</NavLink>
+      </Button>
       {children}
     </div>
   );

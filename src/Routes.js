@@ -1,14 +1,15 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import ProgramPage from "./pages/ProgramPage";
+import ProgramPage from "./pages/program/ProgramPage";
 import PBPage from "./pages/PBPage";
 import HomePage from "./pages/HomePage";
-import ExercisePage from "./pages/ExercisePage";
-import CreateExercisePage from "./pages/CreateExercisePage";
-import CreateProgramPage from "./pages/CreateProgramPage";
-import WorkoutSessionPage from "./pages/WorkoutSessionPage";
+import ExercisePage from "./pages/exercise/ExercisePage";
+import CreateExercisePage from "./pages/exercise/CreateExercisePage";
+import CreateProgramPage from "./pages/program/CreateProgramPage";
+import WorkoutSessionPage from "./pages/workout/WorkoutSessionPage";
 import UserInfoPage from "./pages/UserInfoPage";
-import EditProgramPage from "./pages/EditProgramPage";
+import EditProgramPage from "./pages/program/EditProgramPage";
+import EditExercisePage from "./pages/exercise/EditExercisePage";
 
 export default function Links() {
   return (
@@ -21,6 +22,7 @@ export default function Links() {
         <Route path="/createprogram" element={<CreateProgramPage />} />
         <Route path="/workoutsession" element={<WorkoutSessionPage />} />
         <Route path="/editprogram" element={<EditProgramPage />} />
+        <Route path="/editexercise" element={<EditExercisePage />} />
         <Route path="/user" element={<UserInfoPage />} />
         <Route path="/pb" element={<PBPage />} />
       </Routes>

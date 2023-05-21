@@ -3,11 +3,11 @@ import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import WorkoutCalendarTable from "../components/workout/WorkoutCalendarTable";
+import WorkoutCalendarTable from "./workout/WorkoutCalendarTable";
 import Button from "@mui/material/Button";
 import { NavLink } from "react-router-dom";
-import SearchInputControlledSelect from "../components/generic/inputs/SearchInputControlledSelect";
-import ListTable from "../components/generic/tables/ListTable";
+import SearchInputControlledSelect from "../components/inputs/SearchInputControlledSelect";
+import ListTable from "../components/tables/ListTable";
 import {
   ProgramList,
   ProgramColumns,
@@ -18,9 +18,9 @@ import {
   ExerciseColumns,
   ExerciseList as ExerciseListSimple,
 } from "../assets/dummy/ExerciseExample";
-import AddModal from "../components/generic/modals/AddModal";
-import AddProgramOptions from "../components/program/AddProgramOptions";
-import AddExerciseOptions from "../components/exercise/AddExerciseOptions";
+import AddModal from "../components/modals/AddModal";
+import AddProgramOptions from "./program/AddProgramOptions";
+import AddExerciseOptions from "./exercise/AddExerciseOptions";
 
 export default function HomePage({ children }) {
   return (

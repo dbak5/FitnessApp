@@ -1,5 +1,5 @@
 import React from "react";
-import CreateProgramForm from "../components/program/CreateProgramForm";
+import CreateProgramForm from "./CreateProgramForm";
 
 export default function CreateProgramPage({ children }) {
   return (

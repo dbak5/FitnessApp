@@ -128,7 +128,6 @@ export const ExerciseData = [
 ];
 
 export const ExerciseColumns = [
-  { field: "id", headerName: "ID", width: 70 },
   { field: "exerciseName", headerName: "Exercise", width: 130 },
   { field: "pb", headerName: "PB", width: 90 },
   { field: "sets", headerName: "Sets", type: "number", width: 70 },

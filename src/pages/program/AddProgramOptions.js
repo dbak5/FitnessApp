@@ -1,6 +1,6 @@
 import * as React from "react";
-import MonthDatePicker from "../generic/inputs/MonthDatePicker";
-import DatePicker from "../generic/inputs/DatePicker";
+import MonthDatePicker from "../../components/inputs/MonthDatePicker";
+import DatePicker from "../../components/inputs/DatePicker";
 
 export default function AddProgramOptions({ children }) {
   return (
