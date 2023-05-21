@@ -1,6 +1,6 @@
 import * as React from "react";
-import TableCard from "../../components/cards/TableCard";
-import PBTable from "../../components/tables/PBTable";
+import TableCard from "../components/generic/cards/TableCard";
+import PBTable from "../components/pb/PBTable";
 
 export default function PBPage({ children }) {
   return (

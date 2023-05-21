@@ -1,20 +1,20 @@
 import React from "react";
-import AddButton from "../buttons/AddButton";
+import AddButton from "../generic/buttons/AddButton";
 import FormControl from "@mui/material/FormControl";
-import TextInput from "../inputs/TextInput";
-import SearchInputControlledSelect from "../inputs/SearchInputControlledSelect";
-import SearchInputMultiSelect from "../inputs/SearchInputMultiSelect";
+import TextInput from "../generic/inputs/TextInput";
+import SearchInputControlledSelect from "../generic/inputs/SearchInputControlledSelect";
+import SearchInputMultiSelect from "../generic/inputs/SearchInputMultiSelect";
 import {
   BodyPartList,
   CategoryList,
   EquipmentList,
 } from "../../assets/dummy/ExerciseList";
 
-export default function CreateExerciseForm({ children }) {
+export default function CreateProgramForm({ children }) {
   return (
-    <div className="createExerciseForm">
+    <div className="createProgramForm">
       <FormControl>
-        <TextInput label="Exercise" />
+        <TextInput label="Program" />
         <SearchInputControlledSelect label="Category" options={CategoryList} />
         <SearchInputControlledSelect
           label="Equipment"
@@ -24,8 +24,11 @@ export default function CreateExerciseForm({ children }) {
           label="Body Part"
           options={BodyPartList}
         ></SearchInputMultiSelect>
-        <AddButton>to library</AddButton>
+        <AddButton />
       </FormControl>
+      <p>
+        Select start date and program automatically sets out program in calendar
+      </p>
       {children}
     </div>
   );

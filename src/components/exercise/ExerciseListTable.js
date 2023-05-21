@@ -26,7 +26,7 @@ const columns = [
   },
 ];
 
-export default function ExercisesTable() {
+export default function ExerciseListTable() {
   return (
     <div style={{ height: 400, width: "100%" }}>
       <DataGrid

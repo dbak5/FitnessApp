@@ -17,43 +17,43 @@ import {
 } from "@mui/x-data-grid-pro";
 import { randomId } from "@mui/x-data-grid-generator";
 
-function EditToolbar(props) {
-  const { setRows, setRowModesModel } = props;
+// function EditToolbar(props) {
+//   const { setRows, setRowModesModel } = props;
 
-  const handleClick = () => {
-    const id = randomId();
-    setRows((oldRows) => [
-      ...oldRows,
-      {
-        id,
-        exerciseName: "",
-        equipment: "",
-        lastActivity: "",
-        bodyPart: "",
-        sets: "",
-        reps: "",
-        isNew: true,
-      },
-    ]);
-    setRowModesModel((oldModel) => ({
-      ...oldModel,
-      [id]: { mode: GridRowModes.Edit, fieldToFocus: "name" },
-    }));
-  };
+//   const handleClick = () => {
+//     const id = randomId();
+//     setRows((oldRows) => [
+//       ...oldRows,
+//       {
+//         id,
+//         exerciseName: "",
+//         equipment: "",
+//         lastActivity: "",
+//         bodyPart: "",
+//         sets: "",
+//         reps: "",
+//         isNew: true,
+//       },
+//     ]);
+//     setRowModesModel((oldModel) => ({
+//       ...oldModel,
+//       [id]: { mode: GridRowModes.Edit, fieldToFocus: "name" },
+//     }));
+//   };
 
-  return (
-    <GridToolbarContainer>
-      <Button color="primary" startIcon={<AddIcon />} onClick={handleClick}>
-        Add Exercise
-      </Button>
-    </GridToolbarContainer>
-  );
-}
+//   return (
+//     <GridToolbarContainer>
+//       <Button color="primary" startIcon={<AddIcon />} onClick={handleClick}>
+//         Add Exercise
+//       </Button>
+//     </GridToolbarContainer>
+//   );
+// }
 
-EditToolbar.propTypes = {
-  setRowModesModel: PropTypes.func.isRequired,
-  setRows: PropTypes.func.isRequired,
-};
+// EditToolbar.propTypes = {
+//   setRowModesModel: PropTypes.func.isRequired,
+//   setRows: PropTypes.func.isRequired,
+// };
 
 export default function ActivityTable() {
   const [rows, setRows] = React.useState(RowData);
@@ -201,9 +201,9 @@ export default function ActivityTable() {
         onRowEditStart={handleRowEditStart}
         onRowEditStop={handleRowEditStop}
         processRowUpdate={processRowUpdate}
-        slots={{
-          toolbar: EditToolbar,
-        }}
+        // slots={{
+        //   toolbar: EditToolbar,
+        // }}
         slotProps={{
           toolbar: { setRows, setRowModesModel },
         }}
