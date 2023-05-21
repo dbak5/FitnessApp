@@ -1,7 +1,14 @@
 import React from "react";
-import CreateProgramModal from "../components/program/CreateProgramModal";
 import ListTable from "../components/generic/tables/ListTable";
-import { ProgramList, Columns } from "../assets/dummy/ProgramExample";
+import {
+  ProgramList,
+  ProgramColumns,
+  ProgramListSimple,
+} from "../assets/dummy/ProgramExample";
+import ProgramDetailModal from "../components/program/ProgramDetailModal";
+import AddModal from "../components/generic/modals/AddModal";
+import AddProgramOptions from "../components/program/AddProgramOptions";
+import CreateProgramForm from "../components/program/CreateProgramForm";
 
 export default function ProgramPage({ children }) {
   return (
@@ -9,7 +16,7 @@ export default function ProgramPage({ children }) {
       <h1>Program Library</h1>
       <ListTable
         data={ProgramList}
-        columns={Columns}
+        columns={ProgramColumns}
         checkboxSelection={false}
       />
       <p>
@@ -22,7 +29,13 @@ export default function ProgramPage({ children }) {
       </p>
       <p>TO DO: how can we calculate or add in deload week</p>
 
-      <CreateProgramModal />
+      <AddModal label="Create new">
+        <CreateProgramForm />
+      </AddModal>
+      <AddModal label="Add to calendar" options={ProgramListSimple}>
+        <AddProgramOptions />
+      </AddModal>
+      <ProgramDetailModal />
       {children}
     </div>
   );

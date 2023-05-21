@@ -3,11 +3,24 @@ import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import AddExerciseModal from "../components/exercise/AddExerciseModal";
-import AddProgramModal from "../components/program/AddProgramModal";
 import WorkoutCalendarTable from "../components/workout/WorkoutCalendarTable";
 import Button from "@mui/material/Button";
 import { NavLink } from "react-router-dom";
+import SearchInputControlledSelect from "../components/generic/inputs/SearchInputControlledSelect";
+import ListTable from "../components/generic/tables/ListTable";
+import {
+  ProgramList,
+  ProgramColumns,
+  ProgramListSimple,
+} from "../assets/dummy/ProgramExample";
+import {
+  ExerciseData,
+  ExerciseColumns,
+  ExerciseList as ExerciseListSimple,
+} from "../assets/dummy/ExerciseExample";
+import AddModal from "../components/generic/modals/AddModal";
+import AddProgramOptions from "../components/program/AddProgramOptions";
+import AddExerciseOptions from "../components/exercise/AddExerciseOptions";
 
 export default function HomePage({ children }) {
   return (
@@ -25,8 +38,31 @@ export default function HomePage({ children }) {
       <p>
         TO DO: Only show program button if there is no workout in the calendar
       </p>
-      <AddExerciseModal />
-      <AddProgramModal />
+      <AddModal label="Add Exercise" options={ExerciseListSimple}>
+        <SearchInputControlledSelect
+          label="Search"
+          options={ExerciseListSimple}
+        />
+        <ListTable
+          data={ExerciseData}
+          columns={ExerciseColumns}
+          checkboxSelection={true}
+        />
+        <AddExerciseOptions />
+      </AddModal>
+
+      <AddModal label="Add Program" options={ProgramListSimple}>
+        <SearchInputControlledSelect
+          label="Search"
+          options={ProgramListSimple}
+        />
+        <ListTable
+          data={ProgramList}
+          columns={ProgramColumns}
+          checkboxSelection={false}
+        />
+        <AddProgramOptions />
+      </AddModal>
       {children}
     </div>
   );

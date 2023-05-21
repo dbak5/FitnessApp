@@ -8,6 +8,7 @@ import CreateExercisePage from "./pages/CreateExercisePage";
 import CreateProgramPage from "./pages/CreateProgramPage";
 import WorkoutSessionPage from "./pages/WorkoutSessionPage";
 import UserInfoPage from "./pages/UserInfoPage";
+import EditProgramPage from "./pages/EditProgramPage";
 
 export default function Links() {
   return (
@@ -19,6 +20,7 @@ export default function Links() {
         <Route path="/createexercise" element={<CreateExercisePage />} />
         <Route path="/createprogram" element={<CreateProgramPage />} />
         <Route path="/workoutsession" element={<WorkoutSessionPage />} />
+        <Route path="/editprogram" element={<EditProgramPage />} />
         <Route path="/user" element={<UserInfoPage />} />
         <Route path="/pb" element={<PBPage />} />
       </Routes>

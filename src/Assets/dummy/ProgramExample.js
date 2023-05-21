@@ -10,13 +10,22 @@ export const ProgramListSimple = [
   "Bodybuilding",
 ];
 
-export const Columns = [
+export const ProgramColumns = [
   { field: "programName", headerName: "Name", width: 300 },
+];
+
+export const ColumnsProgramExample = [
+  { field: "programName", headerName: "Name", width: 300 },
+  { field: "exerciseName", headerName: "Exercise", width: 130 },
+  { field: "sets", headerName: "Sets", type: "number", width: 70 },
+  { field: "reps", headerName: "Reps", type: "number", width: 70 },
+  { field: "equipment", headerName: "Equipment", width: 130 },
 ];
 
 export const ProgramExample = [
   {
     id: 1,
+    programName: "Weightlifting Block 1",
     exerciseName: "Front squat",
     sets: 4,
     reps: 3,
@@ -26,6 +35,7 @@ export const ProgramExample = [
   },
   {
     id: 2,
+    programName: "Weightlifting Block 1",
     exerciseName: "Back squat",
     sets: 3,
     reps: 4,
@@ -35,6 +45,7 @@ export const ProgramExample = [
   },
   {
     id: 3,
+    programName: "Weightlifting Block 1",
     exerciseName: "Deadlift",
     sets: 4,
     reps: 5,
@@ -44,6 +55,7 @@ export const ProgramExample = [
   },
   {
     id: 4,
+    programName: "Weightlifting Block 1",
     exerciseName: "Clean and jerk",
     sets: 3,
     reps: 6,
@@ -53,6 +65,7 @@ export const ProgramExample = [
   },
   {
     id: 5,
+    programName: "Weightlifting Block 1",
     exerciseName: "Bicep curls",
     sets: 4,
     reps: 5,
@@ -62,6 +75,7 @@ export const ProgramExample = [
   },
   {
     id: 6,
+    programName: "Weightlifting Block 1",
     exerciseName: "Snatch pull",
     sets: 5,
     reps: 2,

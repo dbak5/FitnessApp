@@ -2,6 +2,12 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
+import ListTable from "../generic/tables/ListTable";
+import {
+  ProgramExample,
+  ColumnsProgramExample,
+} from "../../assets/dummy/ProgramExample";
+import { NavLink } from "react-router-dom";
 
 const style = {
   position: "absolute",
@@ -29,7 +35,17 @@ export default function ProgramDetailModal({ children }) {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>{children}</Box>
+        <Box sx={style}>
+          <ListTable
+            data={ProgramExample}
+            columns={ColumnsProgramExample}
+            checkboxSelection={false}
+          />
+          <Button>
+            <NavLink to="/editprogram">Make changes</NavLink>
+          </Button>
+          {children}
+        </Box>
       </Modal>
     </div>
   );
