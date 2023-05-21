@@ -7,7 +7,6 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/DeleteOutlined";
 import SaveIcon from "@mui/icons-material/Save";
 import CancelIcon from "@mui/icons-material/Close";
-import { RowData } from "../../assets/dummy/RowData";
 
 import {
   GridRowModes,
@@ -16,6 +15,7 @@ import {
   GridActionsCellItem,
 } from "@mui/x-data-grid-pro";
 import { randomId } from "@mui/x-data-grid-generator";
+import { WorkoutExample } from "../../assets/dummy/WorkoutExample";
 
 // function EditToolbar(props) {
 //   const { setRows, setRowModesModel } = props;
@@ -55,8 +55,8 @@ import { randomId } from "@mui/x-data-grid-generator";
 //   setRows: PropTypes.func.isRequired,
 // };
 
-export default function ActivityTable() {
-  const [rows, setRows] = React.useState(RowData);
+export default function WorkoutCalendarTable() {
+  const [rows, setRows] = React.useState(WorkoutExample);
   const [rowModesModel, setRowModesModel] = React.useState({});
 
   const handleRowEditStart = (params, event) => {

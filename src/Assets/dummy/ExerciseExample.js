@@ -1,4 +1,4 @@
-export const RowData = [
+export const ExerciseData = [
   {
     id: 1,
     exerciseName: "Front squat",
@@ -127,8 +127,46 @@ export const RowData = [
   },
 ];
 
-export const ProgramList = [
-  { id: 1, programName: "Weightlifting Block 1" },
-  { id: 2, programName: "Weightlifting Block 2" },
-  { id: 3, programName: "Bodybuilding" },
+export const Columns = [
+  { field: "id", headerName: "ID", width: 70 },
+  { field: "exerciseName", headerName: "Exercise", width: 130 },
+  { field: "pb", headerName: "PB", width: 90 },
+  { field: "sets", headerName: "Sets", type: "number", width: 70 },
+  { field: "reps", headerName: "Reps", type: "number", width: 70 },
+  { field: "equipment", headerName: "Equipment", width: 130 },
+  {
+    field: "lastActivity",
+    headerName: "Last Activity",
+    width: 130,
+  },
+  {
+    field: "category",
+    headerName: "Category",
+    width: 130,
+  },
+  {
+    field: "bodyPart",
+    headerName: "Body Part",
+    width: 130,
+  },
+];
+
+export const ExerciseList = [
+  "Front squat",
+  "Back squat",
+  "Deadlift",
+  "Bench press",
+  "Clean and jerk",
+  "Snatch balance",
+  "Snatch pull",
+];
+
+export const CategoryList = ["Bodybuilding", "Weightlifting", "Conditioning"];
+
+export const EquipmentList = ["BB", "DB", "KB"];
+
+export const BodyPartList = [
+  { title: "Upper" },
+  { title: "Core" },
+  { title: "Legs" },
 ];

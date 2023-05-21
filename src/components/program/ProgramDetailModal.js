@@ -2,13 +2,6 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
-import SearchInputControlledSelect from "../generic/inputs/SearchInputControlledSelect";
-import ListTable from "../generic/tables/ListTable";
-import {
-  ExerciseData,
-  Columns,
-  ExerciseList,
-} from "../../assets/dummy/ExerciseExample";
 
 const style = {
   position: "absolute",
@@ -22,29 +15,21 @@ const style = {
   p: 4,
 };
 
-export default function AddExerciseModal({ children }) {
+export default function ProgramDetailModal({ children }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   return (
     <div>
-      <Button onClick={handleOpen}>Add Exercise</Button>
+      <Button onClick={handleOpen}>View Program Detail</Button>
       <Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
-          <SearchInputControlledSelect label="Search" options={ExerciseList} />
-          <ListTable
-            data={ExerciseData}
-            columns={Columns}
-            checkboxSelection={true}
-          />
-          {children}
-        </Box>
+        <Box sx={style}>{children}</Box>
       </Modal>
     </div>
   );

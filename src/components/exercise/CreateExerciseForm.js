@@ -8,7 +8,7 @@ import {
   BodyPartList,
   CategoryList,
   EquipmentList,
-} from "../../assets/dummy/ExerciseList";
+} from "../../assets/dummy/ExerciseExample";
 
 export default function CreateExerciseForm({ children }) {
   return (

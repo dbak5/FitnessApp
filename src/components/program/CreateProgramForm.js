@@ -8,7 +8,7 @@ import {
   BodyPartList,
   CategoryList,
   EquipmentList,
-} from "../../assets/dummy/ExerciseList";
+} from "../../assets/dummy/ExerciseExample";
 
 export default function CreateProgramForm({ children }) {
   return (
@@ -26,9 +26,7 @@ export default function CreateProgramForm({ children }) {
         ></SearchInputMultiSelect>
         <AddButton />
       </FormControl>
-      <p>
-        Select start date and program automatically sets out program in calendar
-      </p>
+
       {children}
     </div>
   );

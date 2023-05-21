@@ -2,10 +2,16 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
-import ProgramCard from "./ProgramCard";
 import AddButton from "../generic/buttons/AddButton";
 import MonthDatePicker from "../generic/inputs/MonthDatePicker";
 import DatePicker from "../generic/inputs/DatePicker";
+import SearchInputControlledSelect from "../generic/inputs/SearchInputControlledSelect";
+import ListTable from "../generic/tables/ListTable";
+import {
+  ProgramList,
+  ProgramListSimple,
+  Columns,
+} from "../../assets/dummy/ProgramExample";
 
 const style = {
   position: "absolute",
@@ -34,17 +40,21 @@ export default function AddProgramModal({ children }) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <ProgramCard />
+          <SearchInputControlledSelect
+            label="Search"
+            options={ProgramListSimple}
+          />
+          <ListTable
+            data={ProgramList}
+            columns={Columns}
+            checkboxSelection={false}
+          />
           <p>Select start date</p>
           <MonthDatePicker label="Start date" />
           <p>Select days of week to workout</p>
           <DatePicker />
           <AddButton>to calendar</AddButton>
-          <p>Table with a program name input.</p>
-          <p>
-            Select start date and program automatically sets out program in
-            calendar
-          </p>
+
           {children}
         </Box>
       </Modal>

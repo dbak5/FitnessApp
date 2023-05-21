@@ -1,21 +1,11 @@
 import * as React from "react";
 import { DataGrid } from "@mui/x-data-grid";
-import { RowData } from "../../assets/dummy/RowData";
 
-const columns = [
-  { field: "exerciseName", headerName: "Name", width: 130 },
-  {
-    field: "pbDate",
-    headerName: "Date",
-    width: 130,
-  },
-  { field: "pb", headerName: "PB", width: 90 },
-];
-export default function PBTable() {
+export default function ListTable({ data, columns, checkboxSelection }) {
   return (
     <div style={{ height: 400, width: "100%" }}>
       <DataGrid
-        rows={RowData}
+        rows={data}
         columns={columns}
         initialState={{
           pagination: {
@@ -23,6 +13,7 @@ export default function PBTable() {
           },
         }}
         pageSizeOptions={[5, 10]}
+        checkboxSelection={checkboxSelection}
       />
     </div>
   );
