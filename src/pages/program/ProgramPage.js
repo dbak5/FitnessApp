@@ -8,12 +8,9 @@ import {
   ProgramListSimple,
 } from "../../assets/dummy/ProgramExample";
 import AddModal from "../../components/modals/AddModal";
-import AddProgramOptions from "./AddProgramOptions";
-import CreateProgramForm from "./CreateProgramForm";
-import {
-  ProgramExample,
-  ColumnsProgramExample,
-} from "../../assets/dummy/ProgramExample";
+import AddProgramOptions from "./content/AddProgramOptions";
+import CreateProgramForm from "./content/CreateProgramForm";
+import ProgramDetailContent from "./content/ProgramDetailContent";
 
 export default function ProgramPage({ children }) {
   return (
@@ -41,11 +38,7 @@ export default function ProgramPage({ children }) {
         <AddProgramOptions />
       </AddModal>
       <AddModal label="Show program detail">
-        <ListTable
-          data={ProgramExample}
-          columns={ColumnsProgramExample}
-          checkboxSelection={false}
-        />
+        <ProgramDetailContent />
         <Button>
           <NavLink to="/editprogram">Make changes</NavLink>
         </Button>

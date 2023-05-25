@@ -2,7 +2,6 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
-import AddButton from "../buttons/AddButton";
 
 const style = {
   position: "absolute",
@@ -16,7 +15,7 @@ const style = {
   p: 4,
 };
 
-export default function AddModal({ children, label }) {
+export default function ViewModal({ children, label }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -30,10 +29,7 @@ export default function AddModal({ children, label }) {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
-          {children}
-          <AddButton />
-        </Box>
+        <Box sx={style}>{children}</Box>
       </Modal>
     </div>
   );

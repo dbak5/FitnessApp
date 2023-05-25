@@ -84,3 +84,69 @@ export const ProgramExample = [
     day: "2",
   },
 ];
+
+export const ProgramDetailExample = [
+  {
+    id: 1,
+    exerciseName: "Front squat",
+    sets: 4,
+    reps: 3,
+    equipment: "BB",
+    week: "1",
+    day: "1",
+  },
+  {
+    id: 2,
+    exerciseName: "Back squat",
+    sets: 3,
+    reps: 4,
+    equipment: "BB",
+    week: "2",
+    day: "3",
+  },
+  {
+    id: 3,
+    exerciseName: "Deadlift",
+    sets: 4,
+    reps: 5,
+    equipment: "BB",
+    week: "3",
+    day: "2",
+  },
+  {
+    id: 4,
+    exerciseName: "Clean and jerk",
+    sets: 3,
+    reps: 6,
+    equipment: "BB",
+    week: "3",
+    day: "1",
+  },
+  {
+    id: 5,
+    exerciseName: "Bicep curls",
+    sets: 4,
+    reps: 5,
+    equipment: "DB",
+    week: "4",
+    day: "3",
+  },
+  {
+    id: 6,
+    exerciseName: "Snatch pull",
+    sets: 5,
+    reps: 2,
+    equipment: "BB",
+    week: "4",
+    day: "2",
+  },
+];
+
+export const ProgramDetailColumns = [
+  { field: "week", headerName: "Week", width: 70 },
+  { field: "day", headerName: "Day", width: 70 },
+  { field: "exerciseName", headerName: "Exercise", width: 130 },
+  { field: "sets", headerName: "Sets", type: "number", width: 70 },
+  { field: "reps", headerName: "Reps", type: "number", width: 70 },
+  { field: "equipment", headerName: "Equipment", width: 130 },
+];

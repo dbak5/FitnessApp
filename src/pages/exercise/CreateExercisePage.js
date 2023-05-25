@@ -1,5 +1,5 @@
 import React from "react";
-import CreateExerciseForm from "./CreateExerciseForm";
+import CreateExerciseForm from "./content/CreateExerciseForm";
 
 export default function CreateExercisePage({ children }) {
   return (

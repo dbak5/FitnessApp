@@ -1,6 +1,6 @@
 import * as React from "react";
-import MonthDatePicker from "../../components/inputs/MonthDatePicker";
-import DatePicker from "../../components/inputs/DatePicker";
+import MonthDatePicker from "../../../components/inputs/MonthDatePicker";
+import DatePicker from "../../../components/inputs/DatePicker";
 import { TextField } from "@mui/material";
 
 export default function AddExerciseOptions({ children }) {

@@ -8,8 +8,10 @@ import {
   ExerciseList,
 } from "../../assets/dummy/ExerciseExample";
 import AddModal from "../../components/modals/AddModal";
-import AddExerciseOptions from "./AddExerciseOptions";
-import CreateExerciseForm from "./CreateExerciseForm";
+import AddExerciseOptions from "./content/AddExerciseOptions";
+import CreateExerciseForm from "./content/CreateExerciseForm";
+import ExerciseDetailContent from "./content/ExerciseDetailContent";
+import ViewModal from "../../components/modals/ViewModal";
 
 export default function ExercisePage({ children }) {
   return (
@@ -36,6 +38,9 @@ export default function ExercisePage({ children }) {
       <Button>
         <NavLink to="/editexercise">Edit Exercise</NavLink>
       </Button>
+      <ViewModal label="View exercise detail">
+        <ExerciseDetailContent />
+      </ViewModal>
       {children}
     </div>
   );

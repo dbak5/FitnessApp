@@ -169,3 +169,51 @@ export const BodyPartList = [
   { title: "Core" },
   { title: "Legs" },
 ];
+
+export const ExerciseDetailData = [
+  {
+    id: 1,
+    sets: 4,
+    reps: 3,
+    date: "20/02/2023",
+    weight: 55,
+    notes: "Felt heavy",
+  },
+  {
+    id: 2,
+    sets: 3,
+    reps: 4,
+    date: "02/03/2023",
+    weight: 55,
+    notes: "Missed last rep",
+  },
+  {
+    id: 3,
+    sets: 4,
+    reps: 5,
+    date: "05/06/2023",
+    weight: 55,
+    notes: "Felt good",
+  },
+  {
+    id: 4,
+    exerciseName: "Clean and jerk",
+    sets: 3,
+    reps: 6,
+    date: "15/09/2023",
+    weight: 55,
+    notes: "Go heavier next time",
+  },
+];
+
+export const ExerciseDetailColumns = [
+  {
+    field: "date",
+    headerName: "Date",
+    width: 130,
+  },
+  { field: "sets", headerName: "Sets", type: "number", width: 70 },
+  { field: "reps", headerName: "Reps", type: "number", width: 70 },
+  { field: "weight", headerName: "Weight (kgs)", type: "number", width: 100 },
+  { field: "notes", headerName: "Notes", type: "text", width: 200 },
+];
