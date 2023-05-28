@@ -34,7 +34,7 @@ export const HomePage: FC<Props> = () => {
         data={ExerciseData}
         columns={ExerciseColumns}
         checkboxSelection={true}
-        activity="exercise"
+        place="calendar"
       >
         <AddExerciseOptions />
       </AddModal>
@@ -44,7 +44,7 @@ export const HomePage: FC<Props> = () => {
         data={ProgramList}
         columns={ProgramColumns}
         checkboxSelection={false}
-        activity="program"
+        place="calendar"
       >
         <AddProgramOptions />
       </AddModal>

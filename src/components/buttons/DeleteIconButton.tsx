@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren } from "react";
 import Button from "@mui/material/Button";
-import AddIcon from "@mui/icons-material/Add";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const style = {
   bgcolor: "background.paper",
@@ -11,10 +11,6 @@ const style = {
 
 type Props = PropsWithChildren & {};
 
-export const AddToCalendarButton: FC<Props> = () => {
-  return (
-    <Button sx={style} startIcon={<AddIcon />} variant="outlined">
-      to calendar
-    </Button>
-  );
+export const DeleteIconButton: FC<Props> = () => {
+  return <Button sx={style} startIcon={<DeleteIcon />} />;
 };

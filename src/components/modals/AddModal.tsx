@@ -12,7 +12,7 @@ type Props = PropsWithChildren & {
   columns: any[];
   checkboxSelection: boolean;
   label: string;
-  activity: string;
+  place: string;
 };
 
 export const AddModal: FC<Props> = ({
@@ -22,7 +22,7 @@ export const AddModal: FC<Props> = ({
   columns,
   checkboxSelection,
   label,
-  activity,
+  place,
 }) => {
   return (
     <AppModal label={label}>
@@ -42,7 +42,7 @@ export const AddModal: FC<Props> = ({
             {children}
           </Grid>
           <Grid item xs={12}>
-            <AddButton activity={activity} />
+            <AddButton place={place} />
           </Grid>
         </Grid>
       </Box>

@@ -35,7 +35,7 @@ export const ExercisePage: FC<Props> = ({ children }) => {
       <CreateModal>
         <CreateExerciseForm />
       </CreateModal>
-      <AddToCalendarModal activity={activity}>
+      <AddToCalendarModal>
         <AddExerciseOptions />
       </AddToCalendarModal>
       <EditButton link="/editexercise" activity={activity} />

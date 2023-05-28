@@ -1,15 +1,12 @@
 import { FC, PropsWithChildren } from "react";
 import { AppModal } from "../../components/modals/AppModal";
-import { AddButton } from "../../components/buttons/AddButton";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import { AddToCalendarButton } from "../buttons/AddToCalendarButton";
+import { AddButton } from "../buttons/AddButton";
 
-type Props = PropsWithChildren & {
-  activity: string;
-};
+type Props = PropsWithChildren & {};
 
-export const AddToCalendarModal: FC<Props> = ({ children, activity }) => {
+export const AddToCalendarModal: FC<Props> = ({ children }) => {
   return (
     <AppModal label="Add to calendar">
       <Box sx={{ flexGrow: 1 }}>
@@ -18,7 +15,7 @@ export const AddToCalendarModal: FC<Props> = ({ children, activity }) => {
             {children}
           </Grid>
           <Grid item xs={12}>
-            <AddToCalendarButton />
+            <AddButton place="calendar" />
           </Grid>
         </Grid>
       </Box>

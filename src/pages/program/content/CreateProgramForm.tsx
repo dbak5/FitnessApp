@@ -12,9 +12,11 @@ import { Box } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import { AddButton } from "../../../components/buttons/AddButton";
 
-type Props = PropsWithChildren & {};
+type Props = PropsWithChildren & {
+  place: string;
+};
 
-export const CreateProgramForm: FC<Props> = () => {
+export const CreateProgramForm: FC<Props> = ({ place }) => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <FormControl>
@@ -38,7 +40,7 @@ export const CreateProgramForm: FC<Props> = () => {
             <SearchInputMultiSelect label="Body Part" options={BodyPartList} />
           </Grid>
           <Grid item xs={12}>
-            <AddButton activity="program" />
+            <AddButton place={place} />
           </Grid>
         </Grid>
       </FormControl>

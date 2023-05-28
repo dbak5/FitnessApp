@@ -11,7 +11,7 @@ import React, { FC, PropsWithChildren } from "react";
 
 type Props = PropsWithChildren & {};
 
-export const Header: FC<Props> = ({}) => {
+export const Header: FC<Props> = () => {
   const [auth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null);
 

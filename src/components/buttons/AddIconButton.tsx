@@ -11,10 +11,6 @@ const style = {
 
 type Props = PropsWithChildren & {};
 
-export const CreateButton: FC<Props> = () => {
-  return (
-    <Button sx={style} startIcon={<AddIcon />} variant="outlined">
-      to library
-    </Button>
-  );
+export const AddIconButton: FC<Props> = () => {
+  return <Button sx={style} startIcon={<AddIcon />} variant="outlined" />;
 };

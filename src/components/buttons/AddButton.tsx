@@ -10,13 +10,13 @@ const style = {
 };
 
 type Props = PropsWithChildren & {
-  activity: string;
+  place: string;
 };
 
-export const AddButton: FC<Props> = ({ activity }) => {
+export const AddButton: FC<Props> = ({ place }) => {
   return (
     <Button sx={style} startIcon={<AddIcon />} variant="outlined">
-      new {activity}
+      to {place}
     </Button>
   );
 };

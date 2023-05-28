@@ -38,7 +38,7 @@ export const CreateExerciseForm: FC<Props> = ({ children }) => {
             <SearchInputMultiSelect label="Body Part" options={BodyPartList} />
           </Grid>
           <Grid item xs={12}>
-            <AddButton activity="exercise" />
+            <AddButton place="library" />
           </Grid>
         </Grid>
       </FormControl>

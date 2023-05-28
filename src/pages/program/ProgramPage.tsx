@@ -29,9 +29,9 @@ export const ProgramPage: FC<Props> = () => {
         checkboxSelection={false}
       />
       <CreateModal>
-        <CreateProgramForm />
+        <CreateProgramForm place={"library"} />
       </CreateModal>
-      <AddToCalendarModal activity={activity}>
+      <AddToCalendarModal>
         <AddProgramOptions />
       </AddToCalendarModal>
       <EditButton link="/editprogram" activity={activity} />
