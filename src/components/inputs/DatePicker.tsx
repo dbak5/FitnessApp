@@ -1,6 +1,6 @@
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
-import React, { FC, PropsWithChildren, useState } from "react";
+import { FC, PropsWithChildren, useState } from "react";
 import { DAYS } from "../../assets/dummy/Days";
 
 type Props = PropsWithChildren & {};

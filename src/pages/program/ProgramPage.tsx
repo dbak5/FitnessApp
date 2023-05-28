@@ -7,29 +7,34 @@ import { AddButton } from "../../components/buttons/AddButton";
 import { AddProgramOptions } from "./content/AddProgramOptions";
 import { CreateProgramForm } from "./content/CreateProgramForm";
 import { ProgramDetailContent } from "./content/ProgramDetailContent";
-import React, { FC, PropsWithChildren } from "react";
+import { FC, PropsWithChildren } from "react";
 import { Box } from "@mui/material";
+import Typography from "@mui/material/Typography";
 
 type Props = PropsWithChildren & {};
 
-export const ProgramPage: FC<Props> = ({ children }) => {
+export const ProgramPage: FC<Props> = () => {
   return (
     <Box>
-      <h1>Program Library</h1>
+      <Typography variant="h1">Program Library</Typography>
       <ListTable
         data={ProgramList}
         columns={ProgramColumns}
         checkboxSelection={false}
       />
-      <p>
+      <Typography variant="body1">
         TO DO: be able to select program from table to add to calendar, select
         days of the week to workout/frequency
-      </p>
-      <p>TO DO: be able to select program from table and edit/add exercises</p>
-      <p>
+      </Typography>
+      <Typography variant="body1">
+        TO DO: be able to select program from table and edit/add exercises
+      </Typography>
+      <Typography variant="body1">
         TO DO: be able to click on a program in list to bring up program detail
-      </p>
-      <p>TO DO: how can we calculate or add in deload week</p>
+      </Typography>
+      <Typography variant="body1">
+        TO DO: how can we calculate or add in deload week
+      </Typography>
 
       <AppModal label="Create new">
         <CreateProgramForm />
@@ -44,7 +49,6 @@ export const ProgramPage: FC<Props> = ({ children }) => {
           <NavLink to="/editprogram">Make changes</NavLink>
         </Button>
       </AppModal>
-      {children}
     </Box>
   );
 };

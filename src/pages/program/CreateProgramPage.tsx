@@ -1,15 +1,15 @@
 import { Box } from "@mui/material";
 import { CreateProgramForm } from "./content/CreateProgramForm";
-import React, { FC, PropsWithChildren } from "react";
+import { FC, PropsWithChildren } from "react";
+import Typography from "@mui/material/Typography";
 
 type Props = PropsWithChildren & {};
 
-export const CreateProgramPage: FC<Props> = ({ children }) => {
+export const CreateProgramPage: FC<Props> = () => {
   return (
     <Box>
-      <h1>CREATE PROGRAM</h1>
+      <Typography variant="h1">CREATE PROGRAM</Typography>
       <CreateProgramForm />
-      {children}
     </Box>
   );
 };

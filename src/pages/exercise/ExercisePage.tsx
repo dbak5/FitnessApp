@@ -10,27 +10,30 @@ import { AddExerciseOptions } from "./content/AddExerciseOptions";
 import { CreateExerciseForm } from "./content/CreateExerciseForm";
 import { ExerciseDetailContent } from "./content/ExerciseDetailContent";
 import { AddButton } from "../../components/buttons/AddButton";
-import React, { FC, PropsWithChildren } from "react";
+import { FC, PropsWithChildren } from "react";
 import { Box } from "@mui/material";
+import Typography from "@mui/material/Typography";
 
 type Props = PropsWithChildren & {};
 
 export const ExercisePage: FC<Props> = ({ children }) => {
   return (
     <Box>
-      <h1>Exercise Library</h1>
+      <Typography variant="h1">Exercise Library</Typography>
       <ListTable
         data={ExerciseData}
         columns={ExerciseColumns}
         checkboxSelection={true}
       />
-      <p>TO DO: Progressive overload calculations for bodybuilding exercises</p>
-      <p>TO DO: filter exercises</p>
-      <p>TO DO: add exercises by frequency</p>
-      <p>
-        TO DO: be able to click on an exercise in list to bring up exercise
+      <Typography variant="body1">
+        TODO: Progressive overload calculations for bodybuilding exercises
+      </Typography>
+      <Typography variant="body1">TODO: filter exercises </Typography>
+      <Typography variant="body1">TODO: add exercises by frequency </Typography>
+      <Typography variant="body1">
+        TODO: be able to click on an exercise in list to bring up exercise
         detail
-      </p>
+      </Typography>
       <AppModal label="Create new">
         <CreateExerciseForm />
       </AppModal>

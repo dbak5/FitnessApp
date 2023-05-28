@@ -1,18 +1,19 @@
 import { Box } from "@mui/material";
 import { CreateExerciseForm } from "./content/CreateExerciseForm";
-import React, { FC, PropsWithChildren } from "react";
+import { FC, PropsWithChildren } from "react";
+import Typography from "@mui/material/Typography";
 
 type Props = PropsWithChildren & {};
 
 export const CreateExercisePage: FC<Props> = ({ children }) => {
   return (
     <Box>
-      <h1>CREATE EXERCISE</h1>
+      <Typography variant="h1">CREATE EXERCISE</Typography>
       <CreateExerciseForm />
-      <p>
-        TO DO: needs to have a property which automatically calculates weight
+      <Typography variant="body1">
+        TODO: needs to have a property which automatically calculates weight
         incrememnts and progressive overload based on 1rm
-      </p>
+      </Typography>
       {children}
     </Box>
   );

@@ -7,12 +7,12 @@ import {
   CategoryList,
   EquipmentList,
 } from "../../../assets/dummy/ExerciseExample";
-import React, { FC, PropsWithChildren } from "react";
+import { FC, PropsWithChildren } from "react";
 import { Box } from "@mui/material";
 
 type Props = PropsWithChildren & {};
 
-export const CreateProgramForm: FC<Props> = ({ children }) => {
+export const CreateProgramForm: FC<Props> = () => {
   return (
     <Box>
       <FormControl>
@@ -27,8 +27,6 @@ export const CreateProgramForm: FC<Props> = ({ children }) => {
           options={BodyPartList}
         ></SearchInputMultiSelect>
       </FormControl>
-
-      {children}
     </Box>
   );
 };

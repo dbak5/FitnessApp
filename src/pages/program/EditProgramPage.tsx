@@ -4,15 +4,16 @@ import {
   ColumnsProgramExample,
 } from "../../assets/dummy/ProgramExample";
 import Button from "@mui/material/Button";
-import React, { FC, PropsWithChildren } from "react";
+import { FC, PropsWithChildren } from "react";
 import { Box } from "@mui/material";
+import Typography from "@mui/material/Typography";
 
 type Props = PropsWithChildren & {};
 
 export const EditProgramPage: FC<Props> = ({}) => {
   return (
     <Box>
-      <h1>Edit Program</h1>
+      <Typography variant="h1">Edit Program</Typography>
       <ListTable
         data={ProgramExample}
         columns={ColumnsProgramExample}

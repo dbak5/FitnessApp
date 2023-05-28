@@ -3,20 +3,19 @@ import {
   ExerciseDetailData,
   ExerciseDetailColumns,
 } from "../../../assets/dummy/ExerciseExample";
-import React, { FC, PropsWithChildren } from "react";
+import { FC, PropsWithChildren } from "react";
 import { Box } from "@mui/material";
+import Typography from "@mui/material/Typography";
 
 type Props = PropsWithChildren & {};
 
 export const ExerciseDetailContent: FC<Props> = ({ children }) => {
   return (
     <Box>
-      <h1>Exercise: Front Squat</h1>
-      <h2>1RM PB: 70kg</h2>
-      <h2>PB date: 20/05/2020</h2>
-
-      <p>Equipment: Barbell</p>
-
+      <Typography variant="h1">Exercise: Front Squat</Typography>
+      <Typography variant="h2">1RM PB: 70kg</Typography>
+      <Typography variant="h2">PB date: 20/05/2020</Typography>
+      <Typography variant="body1">Equipment: Barbell</Typography>
       <ListTable
         data={ExerciseDetailData}
         columns={ExerciseDetailColumns}

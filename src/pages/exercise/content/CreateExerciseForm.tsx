@@ -8,7 +8,7 @@ import {
   CategoryList,
   EquipmentList,
 } from "../../../assets/dummy/ExerciseExample";
-import React, { FC, PropsWithChildren } from "react";
+import { FC, PropsWithChildren } from "react";
 
 type Props = PropsWithChildren & {};
 

@@ -21,15 +21,16 @@ import { AppModal } from "../components/modals/AppModal";
 import { AddProgramOptions } from "./program/content/AddProgramOptions";
 import { AddExerciseOptions } from "./exercise/content/AddExerciseOptions";
 import { AddButton } from "../components/buttons/AddButton";
-import React, { FC, PropsWithChildren } from "react";
+import { FC, PropsWithChildren } from "react";
 import { Box } from "@mui/material";
+import Typography from "@mui/material/Typography";
 
 type Props = PropsWithChildren & {};
 
-export const HomePage: FC<Props> = ({ children }) => {
+export const HomePage: FC<Props> = () => {
   return (
     <Box>
-      <h1>Workout Calendar</h1>
+      <Typography variant="h1">Workout Calendar</Typography>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <DemoContainer components={["DatePicker"]}>
           <DatePicker label="Basic date picker" />
@@ -39,9 +40,9 @@ export const HomePage: FC<Props> = ({ children }) => {
       <Button>
         <NavLink to="/workoutsession">Start Workout</NavLink>
       </Button>
-      <p>
+      <Typography variant="body1">
         TO DO: Only show program button if there is no workout in the calendar
-      </p>
+      </Typography>
       <AppModal label="Add Exercise">
         <SearchInputControlledSelect
           label="Search"
@@ -69,7 +70,6 @@ export const HomePage: FC<Props> = ({ children }) => {
         <AddProgramOptions />
         <AddButton />
       </AppModal>
-      {children}
     </Box>
   );
 };
