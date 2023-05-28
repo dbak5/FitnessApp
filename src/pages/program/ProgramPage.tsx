@@ -1,4 +1,4 @@
-import { ListTable } from "../../components/tables/ListTable";
+import { EditableTable } from "../../components/tables/EditableTable";
 import { ProgramList, ProgramColumns } from "../../assets/dummy/ProgramExample";
 import { AddProgramOptions } from "./content/AddProgramOptions";
 import { CreateProgramForm } from "./content/CreateProgramForm";
@@ -23,7 +23,7 @@ export const ProgramPage: FC<Props> = () => {
   return (
     <Box>
       <Typography variant="h1">Program Library</Typography>
-      <ListTable
+      <EditableTable
         data={ProgramList}
         columns={ProgramColumns}
         checkboxSelection={false}
@@ -31,13 +31,10 @@ export const ProgramPage: FC<Props> = () => {
       <CreateModal>
         <CreateProgramForm place={"library"} />
       </CreateModal>
-      <AddToCalendarModal>
+      <AddToCalendarModal disabled={false}>
         <AddProgramOptions />
       </AddToCalendarModal>
       <EditButton link="/editprogram" activity={activity} />
-      <ViewDetailModal link="/editprogram" activity={activity}>
-        <ProgramDetailContent />
-      </ViewDetailModal>
     </Box>
   );
 };

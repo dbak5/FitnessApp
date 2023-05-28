@@ -18,16 +18,19 @@ const style = {
 
 type Props = PropsWithChildren & {
   label: string;
+  disabled: boolean;
 };
 
-export const AppModal: FC<Props> = ({ label, children }) => {
+export const AppModal: FC<Props> = ({ label, children, disabled }) => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   return (
     <Box>
-      <Button onClick={handleOpen}>{label}</Button>
+      <Button onClick={handleOpen} disabled={disabled}>
+        {label}
+      </Button>
       <Modal open={open} onClose={handleClose}>
         <Box sx={style}>{children}</Box>
       </Modal>

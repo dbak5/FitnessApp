@@ -4,11 +4,13 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import { AddButton } from "../buttons/AddButton";
 
-type Props = PropsWithChildren & {};
+type Props = PropsWithChildren & {
+  disabled: boolean;
+};
 
-export const AddToCalendarModal: FC<Props> = ({ children }) => {
+export const AddToCalendarModal: FC<Props> = ({ children, disabled }) => {
   return (
-    <AppModal label="Add to calendar">
+    <AppModal label="Add to calendar" disabled={disabled}>
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={3}>
           <Grid item xs={12}>

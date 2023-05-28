@@ -7,13 +7,19 @@ import Box from "@mui/material/Box";
 type Props = PropsWithChildren & {
   activity: string;
   link: string;
+  disabled: boolean;
 };
 
 //TODO need to work out how to make this generic for program and exercise
 
-export const ViewDetailModal: FC<Props> = ({ children, activity, link }) => {
+export const ViewDetailModal: FC<Props> = ({
+  children,
+  activity,
+  link,
+  disabled,
+}) => {
   return (
-    <AppModal label="View detail">
+    <AppModal label="View detail" disabled={disabled}>
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={3}>
           <Grid item xs={12}>

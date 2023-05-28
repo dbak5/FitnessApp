@@ -10,7 +10,7 @@ import Grid from "@mui/material/Grid";
 
 type Props = PropsWithChildren & {};
 
-export const ExerciseDetailContent: FC<Props> = ({ children }) => {
+export const ExerciseDetailContent: FC<Props> = () => {
   return (
     <Box>
       <Grid container spacing={3}>

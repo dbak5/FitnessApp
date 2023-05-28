@@ -1,4 +1,4 @@
-import { ListTable } from "../../components/tables/ListTable";
+import { EditableTable } from "../../components/tables/EditableTable";
 import {
   ExerciseData,
   ExerciseColumns,
@@ -6,13 +6,11 @@ import {
 import { FC, PropsWithChildren } from "react";
 import { Box } from "@mui/material";
 import Typography from "@mui/material/Typography";
-import { EditButton } from "../../components/buttons/EditButton";
 import { CreateExerciseForm } from "./content/CreateExerciseForm";
 import { CreateModal } from "../../components/modals/CreateModal";
-import { AddToCalendarModal } from "../../components/modals/AddToCalendarModal";
+//TODO GET THESE WORKING
 import { AddExerciseOptions } from "./content/AddExerciseOptions";
 import { ExerciseDetailContent } from "./content/ExerciseDetailContent";
-import { ViewDetailModal } from "../../components/modals/ViewDetailModal";
 
 type Props = PropsWithChildren & {};
 
@@ -21,13 +19,11 @@ type Props = PropsWithChildren & {};
 //TODO: add exercises by frequency
 //TODO: be able to click on an exercise in list to bring up exercise detail
 
-export const ExercisePage: FC<Props> = ({ children }) => {
-  const activity = "exercise";
-
+export const ExercisePage: FC<Props> = () => {
   return (
     <Box>
       <Typography variant="h1">Exercise Library</Typography>
-      <ListTable
+      <EditableTable
         data={ExerciseData}
         columns={ExerciseColumns}
         checkboxSelection={true}
@@ -35,13 +31,6 @@ export const ExercisePage: FC<Props> = ({ children }) => {
       <CreateModal>
         <CreateExerciseForm />
       </CreateModal>
-      <AddToCalendarModal>
-        <AddExerciseOptions />
-      </AddToCalendarModal>
-      <EditButton link="/editexercise" activity={activity} />
-      <ViewDetailModal link="/editexercise" activity={activity}>
-        <ExerciseDetailContent />
-      </ViewDetailModal>
     </Box>
   );
 };

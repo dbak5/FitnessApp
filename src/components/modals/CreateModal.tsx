@@ -7,7 +7,7 @@ type Props = PropsWithChildren & {};
 
 export const CreateModal: FC<Props> = ({ children }) => {
   return (
-    <AppModal label="Create new">
+    <AppModal label="Create new" disabled={false}>
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={3}>
           <Grid item xs={12}>
