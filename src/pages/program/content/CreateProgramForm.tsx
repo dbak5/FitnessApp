@@ -10,6 +10,7 @@ import {
 import { FC, PropsWithChildren } from "react";
 import { Box } from "@mui/material";
 import Grid from "@mui/material/Grid";
+import { AddButton } from "../../../components/buttons/AddButton";
 
 type Props = PropsWithChildren & {};
 
@@ -35,6 +36,9 @@ export const CreateProgramForm: FC<Props> = () => {
           </Grid>
           <Grid item xs={12}>
             <SearchInputMultiSelect label="Body Part" options={BodyPartList} />
+          </Grid>
+          <Grid item xs={12}>
+            <AddButton activity="program" />
           </Grid>
         </Grid>
       </FormControl>

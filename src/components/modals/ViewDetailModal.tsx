@@ -1,14 +1,17 @@
 import { FC, PropsWithChildren } from "react";
 import { AppModal } from "../../components/modals/AppModal";
-import { AddButton } from "../../components/buttons/AddButton";
+import { EditButton } from "../../components/buttons/EditButton";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 
-type Props = PropsWithChildren & {};
+type Props = PropsWithChildren & {
+  activity: string;
+  link: string;
+};
 
 //TODO need to work out how to make this generic for program and exercise
 
-export const ViewDetailModal: FC<Props> = ({ children }) => {
+export const ViewDetailModal: FC<Props> = ({ children, activity, link }) => {
   return (
     <AppModal label="View detail">
       <Box sx={{ flexGrow: 1 }}>
@@ -17,7 +20,7 @@ export const ViewDetailModal: FC<Props> = ({ children }) => {
             {children}
           </Grid>
           <Grid item xs={12}>
-            <AddButton />
+            <EditButton link={link} activity={activity} />
           </Grid>
         </Grid>
       </Box>

@@ -15,6 +15,8 @@ import {
   ProgramColumns,
   ProgramListSimple,
 } from "../assets/dummy/ProgramExample";
+import { AddProgramOptions } from "./program/content/AddProgramOptions";
+import { AddExerciseOptions } from "./exercise/content/AddExerciseOptions";
 
 type Props = PropsWithChildren & {};
 
@@ -32,14 +34,20 @@ export const HomePage: FC<Props> = () => {
         data={ExerciseData}
         columns={ExerciseColumns}
         checkboxSelection={true}
-      />
+        activity="exercise"
+      >
+        <AddExerciseOptions />
+      </AddModal>
       <AddModal
         label="Add program"
         options={ProgramListSimple}
         data={ProgramList}
         columns={ProgramColumns}
         checkboxSelection={false}
-      />
+        activity="program"
+      >
+        <AddProgramOptions />
+      </AddModal>
     </Box>
   );
 };

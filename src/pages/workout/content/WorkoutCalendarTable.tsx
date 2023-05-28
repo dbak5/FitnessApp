@@ -3,6 +3,6 @@ import { FC, PropsWithChildren } from "react";
 
 type Props = PropsWithChildren & {};
 
-export const WorkoutCalendarTable: FC<Props> = ({}) => {
+export const WorkoutCalendarTable: FC<Props> = () => {
   return <Box />;
 };

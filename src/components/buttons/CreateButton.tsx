@@ -9,14 +9,12 @@ const style = {
   },
 };
 
-type Props = PropsWithChildren & {
-  activity: string;
-};
+type Props = PropsWithChildren & {};
 
-export const AddButton: FC<Props> = ({ activity }) => {
+export const CreateButton: FC<Props> = () => {
   return (
     <Button sx={style} startIcon={<AddIcon />} variant="outlined">
-      new {activity}
+      to library
     </Button>
   );
 };

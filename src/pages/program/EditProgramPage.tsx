@@ -3,14 +3,14 @@ import {
   ProgramExample,
   ColumnsProgramExample,
 } from "../../assets/dummy/ProgramExample";
-import Button from "@mui/material/Button";
 import { FC, PropsWithChildren } from "react";
 import { Box } from "@mui/material";
 import Typography from "@mui/material/Typography";
+import { SaveButton } from "../../components/buttons/SaveButton";
 
 type Props = PropsWithChildren & {};
 
-export const EditProgramPage: FC<Props> = ({}) => {
+export const EditProgramPage: FC<Props> = () => {
   return (
     <Box>
       <Typography variant="h1">Edit Program</Typography>
@@ -19,7 +19,7 @@ export const EditProgramPage: FC<Props> = ({}) => {
         columns={ColumnsProgramExample}
         checkboxSelection={false}
       />
-      <Button>Save</Button>
+      <SaveButton />
     </Box>
   );
 };

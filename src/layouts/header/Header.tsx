@@ -55,23 +55,39 @@ export const Header: FC<Props> = ({}) => {
                   open={Boolean(anchorEl)}
                   onClose={handleClose}
                 >
-                  <MenuItem onClick={handleClose}>
-                    <NavLink to="/">Home </NavLink>
+                  <MenuItem onClick={handleClose} component={NavLink} to="/">
+                    Home
                   </MenuItem>
-                  <MenuItem onClick={handleClose}>
-                    <NavLink to="/exercise">Exercise</NavLink>
+                  <MenuItem
+                    onClick={handleClose}
+                    component={NavLink}
+                    to="/exercise"
+                  >
+                    Exercise
                   </MenuItem>
-                  <MenuItem onClick={handleClose}>
-                    <NavLink to="/createexercise">+ Exercise</NavLink>
+                  <MenuItem
+                    onClick={handleClose}
+                    component={NavLink}
+                    to="/createexercise"
+                  >
+                    + Exercise
                   </MenuItem>
-                  <MenuItem onClick={handleClose}>
-                    <NavLink to="/program">Programs</NavLink>
+                  <MenuItem
+                    onClick={handleClose}
+                    component={NavLink}
+                    to="/program"
+                  >
+                    Programs
                   </MenuItem>
-                  <MenuItem onClick={handleClose}>
-                    <NavLink to="/createprogram">+ Program</NavLink>
+                  <MenuItem
+                    onClick={handleClose}
+                    component={NavLink}
+                    to="/createprogram"
+                  >
+                    + Program
                   </MenuItem>
-                  <MenuItem onClick={handleClose}>
-                    <NavLink to="/pb">PBs</NavLink>
+                  <MenuItem onClick={handleClose} component={NavLink} to="/pb">
+                    PBs
                   </MenuItem>
                 </Menu>
               </>

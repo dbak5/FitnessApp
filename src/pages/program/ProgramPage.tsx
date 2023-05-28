@@ -1,8 +1,5 @@
 import { ListTable } from "../../components/tables/ListTable";
-
 import { ProgramList, ProgramColumns } from "../../assets/dummy/ProgramExample";
-import { AppModal } from "../../components/modals/AppModal";
-import { AddButton } from "../../components/buttons/AddButton";
 import { AddProgramOptions } from "./content/AddProgramOptions";
 import { CreateProgramForm } from "./content/CreateProgramForm";
 import { ProgramDetailContent } from "./content/ProgramDetailContent";
@@ -22,6 +19,7 @@ type Props = PropsWithChildren & {};
 //TO DO: how can we calculate or add in deload week
 
 export const ProgramPage: FC<Props> = () => {
+  const activity = "program";
   return (
     <Box>
       <Typography variant="h1">Program Library</Typography>
@@ -33,11 +31,11 @@ export const ProgramPage: FC<Props> = () => {
       <CreateModal>
         <CreateProgramForm />
       </CreateModal>
-      <AddToCalendarModal>
+      <AddToCalendarModal activity={activity}>
         <AddProgramOptions />
       </AddToCalendarModal>
-      <EditButton link="/editprogram" activity="program" />
-      <ViewDetailModal>
+      <EditButton link="/editprogram" activity={activity} />
+      <ViewDetailModal link="/editprogram" activity={activity}>
         <ProgramDetailContent />
       </ViewDetailModal>
     </Box>

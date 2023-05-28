@@ -9,14 +9,12 @@ const style = {
   },
 };
 
-type Props = PropsWithChildren & {
-  activity: string;
-};
+type Props = PropsWithChildren & {};
 
-export const AddButton: FC<Props> = ({ activity }) => {
+export const AddToCalendarButton: FC<Props> = () => {
   return (
     <Button sx={style} startIcon={<AddIcon />} variant="outlined">
-      new {activity}
+      to calendar
     </Button>
   );
 };

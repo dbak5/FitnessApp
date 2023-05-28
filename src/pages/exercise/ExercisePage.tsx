@@ -22,6 +22,8 @@ type Props = PropsWithChildren & {};
 //TODO: be able to click on an exercise in list to bring up exercise detail
 
 export const ExercisePage: FC<Props> = ({ children }) => {
+  const activity = "exercise";
+
   return (
     <Box>
       <Typography variant="h1">Exercise Library</Typography>
@@ -33,11 +35,11 @@ export const ExercisePage: FC<Props> = ({ children }) => {
       <CreateModal>
         <CreateExerciseForm />
       </CreateModal>
-      <AddToCalendarModal>
+      <AddToCalendarModal activity={activity}>
         <AddExerciseOptions />
       </AddToCalendarModal>
-      <EditButton link="/editexercise" activity="Exercise" />
-      <ViewDetailModal>
+      <EditButton link="/editexercise" activity={activity} />
+      <ViewDetailModal link="/editexercise" activity={activity}>
         <ExerciseDetailContent />
       </ViewDetailModal>
     </Box>

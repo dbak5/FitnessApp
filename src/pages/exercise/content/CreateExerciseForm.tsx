@@ -10,6 +10,7 @@ import {
 } from "../../../assets/dummy/ExerciseExample";
 import { FC, PropsWithChildren } from "react";
 import Grid from "@mui/material/Grid";
+import { AddButton } from "../../../components/buttons/AddButton";
 
 type Props = PropsWithChildren & {};
 
@@ -35,6 +36,9 @@ export const CreateExerciseForm: FC<Props> = ({ children }) => {
           </Grid>
           <Grid item xs={12}>
             <SearchInputMultiSelect label="Body Part" options={BodyPartList} />
+          </Grid>
+          <Grid item xs={12}>
+            <AddButton activity="exercise" />
           </Grid>
         </Grid>
       </FormControl>

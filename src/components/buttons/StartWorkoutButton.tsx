@@ -6,8 +6,8 @@ type Props = PropsWithChildren & {};
 
 export const StartWorkoutButton: FC<Props> = () => {
   return (
-    <Button>
-      <NavLink to="/workoutsession">Start Workout</NavLink>
+    <Button component={NavLink} to="/workoutsession">
+      Start Workout
     </Button>
   );
 };
