@@ -1,6 +1,5 @@
 import { ListTable } from "../../components/tables/ListTable";
-import { NavLink } from "react-router-dom";
-import Button from "@mui/material/Button";
+
 import { ProgramList, ProgramColumns } from "../../assets/dummy/ProgramExample";
 import { AppModal } from "../../components/modals/AppModal";
 import { AddButton } from "../../components/buttons/AddButton";
@@ -10,8 +9,17 @@ import { ProgramDetailContent } from "./content/ProgramDetailContent";
 import { FC, PropsWithChildren } from "react";
 import { Box } from "@mui/material";
 import Typography from "@mui/material/Typography";
+import { CreateModal } from "../../components/modals/CreateModal";
+import { AddToCalendarModal } from "../../components/modals/AddToCalendarModal";
+import { EditButton } from "../../components/buttons/EditButton";
+import { ViewDetailModal } from "../../components/modals/ViewDetailModal";
 
 type Props = PropsWithChildren & {};
+
+//TO DO: be able to select program from table to add to calendar, select days of the week to workout/frequency
+//TO DO: be able to select program from table and edit/add exercises
+//TO DO: be able to click on a program in list to bring up program detail
+//TO DO: how can we calculate or add in deload week
 
 export const ProgramPage: FC<Props> = () => {
   return (
@@ -22,33 +30,16 @@ export const ProgramPage: FC<Props> = () => {
         columns={ProgramColumns}
         checkboxSelection={false}
       />
-      <Typography variant="body1">
-        TO DO: be able to select program from table to add to calendar, select
-        days of the week to workout/frequency
-      </Typography>
-      <Typography variant="body1">
-        TO DO: be able to select program from table and edit/add exercises
-      </Typography>
-      <Typography variant="body1">
-        TO DO: be able to click on a program in list to bring up program detail
-      </Typography>
-      <Typography variant="body1">
-        TO DO: how can we calculate or add in deload week
-      </Typography>
-
-      <AppModal label="Create new">
+      <CreateModal>
         <CreateProgramForm />
-      </AppModal>
-      <AppModal label="Add to calendar">
+      </CreateModal>
+      <AddToCalendarModal>
         <AddProgramOptions />
-        <AddButton />
-      </AppModal>
-      <AppModal label="Show program detail">
+      </AddToCalendarModal>
+      <EditButton link="/editprogram" activity="program" />
+      <ViewDetailModal>
         <ProgramDetailContent />
-        <Button>
-          <NavLink to="/editprogram">Make changes</NavLink>
-        </Button>
-      </AppModal>
+      </ViewDetailModal>
     </Box>
   );
 };

@@ -1,20 +1,25 @@
 import { ListTable } from "../../components/tables/ListTable";
-import { NavLink } from "react-router-dom";
-import Button from "@mui/material/Button";
 import {
   ExerciseData,
   ExerciseColumns,
 } from "../../assets/dummy/ExerciseExample";
-import { AppModal } from "../../components/modals/AppModal";
-import { AddExerciseOptions } from "./content/AddExerciseOptions";
-import { CreateExerciseForm } from "./content/CreateExerciseForm";
-import { ExerciseDetailContent } from "./content/ExerciseDetailContent";
-import { AddButton } from "../../components/buttons/AddButton";
 import { FC, PropsWithChildren } from "react";
 import { Box } from "@mui/material";
 import Typography from "@mui/material/Typography";
+import { EditButton } from "../../components/buttons/EditButton";
+import { CreateExerciseForm } from "./content/CreateExerciseForm";
+import { CreateModal } from "../../components/modals/CreateModal";
+import { AddToCalendarModal } from "../../components/modals/AddToCalendarModal";
+import { AddExerciseOptions } from "./content/AddExerciseOptions";
+import { ExerciseDetailContent } from "./content/ExerciseDetailContent";
+import { ViewDetailModal } from "../../components/modals/ViewDetailModal";
 
 type Props = PropsWithChildren & {};
+
+//TODO: Progressive overload calculations for bodybuilding exercises
+//TODO: filter exercises
+//TODO: add exercises by frequency
+//TODO: be able to click on an exercise in list to bring up exercise detail
 
 export const ExercisePage: FC<Props> = ({ children }) => {
   return (
@@ -25,30 +30,16 @@ export const ExercisePage: FC<Props> = ({ children }) => {
         columns={ExerciseColumns}
         checkboxSelection={true}
       />
-      <Typography variant="body1">
-        TODO: Progressive overload calculations for bodybuilding exercises
-      </Typography>
-      <Typography variant="body1">TODO: filter exercises </Typography>
-      <Typography variant="body1">TODO: add exercises by frequency </Typography>
-      <Typography variant="body1">
-        TODO: be able to click on an exercise in list to bring up exercise
-        detail
-      </Typography>
-      <AppModal label="Create new">
+      <CreateModal>
         <CreateExerciseForm />
-      </AppModal>
-      <AppModal label="Add to calendar">
+      </CreateModal>
+      <AddToCalendarModal>
         <AddExerciseOptions />
-        <AddButton />
-      </AppModal>
-      <Button>
-        <NavLink to="/editexercise">Edit Exercise</NavLink>
-      </Button>
-      <AppModal label="View exercise detail">
+      </AddToCalendarModal>
+      <EditButton link="/editexercise" activity="Exercise" />
+      <ViewDetailModal>
         <ExerciseDetailContent />
-        <AddButton />
-      </AppModal>
-      {children}
+      </ViewDetailModal>
     </Box>
   );
 };

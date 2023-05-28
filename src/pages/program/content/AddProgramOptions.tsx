@@ -3,17 +3,29 @@ import { DatePicker } from "../../../components/inputs/DatePicker";
 import Box from "@mui/material/Box";
 import { FC, PropsWithChildren } from "react";
 import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
 
 type Props = PropsWithChildren & {};
 
-export const AddProgramOptions: FC<Props> = ({ children }) => {
+export const AddProgramOptions: FC<Props> = () => {
   return (
     <Box>
-      <Typography variant="body1">Select start date</Typography>
-      <MonthDatePicker label="Start date" />
-      <Typography variant="body1">Select days of week to workout</Typography>
-      <DatePicker />
-      {children}
+      <Grid container spacing={2}>
+        <Grid item xs={6}>
+          <Typography variant="body1">Select start date</Typography>
+        </Grid>
+        <Grid item xs={6}>
+          <MonthDatePicker label="Start date" />
+        </Grid>
+        <Grid item xs={6}>
+          <Typography variant="body1">
+            Select days of week to workout
+          </Typography>
+        </Grid>
+        <Grid item xs={6}>
+          <DatePicker />
+        </Grid>
+      </Grid>
     </Box>
   );
 };

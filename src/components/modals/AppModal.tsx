@@ -3,7 +3,7 @@ import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import React, { FC, PropsWithChildren } from "react";
 
-//TODO REMOVE THIS AND ADD THEME
+//TODO work out how to use theme spacing padding
 const style = {
   position: "absolute",
   top: "50%",

@@ -5,12 +5,11 @@ import Typography from "@mui/material/Typography";
 
 type Props = PropsWithChildren & {};
 
-export const EditExercisePage: FC<Props> = ({ children }) => {
+export const EditExercisePage: FC<Props> = () => {
   return (
     <Box>
       <Typography variant="h1">Edit Exercise</Typography>
       <Button>Save</Button>
-      {children}
     </Box>
   );
 };

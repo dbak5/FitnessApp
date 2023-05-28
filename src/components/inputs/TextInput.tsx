@@ -7,7 +7,12 @@ type Props = PropsWithChildren & {
 
 export const TextInput: FC<Props> = ({ label, children }) => {
   return (
-    <TextField id="outlined-basic" label={label} variant="outlined">
+    <TextField
+      sx={{ width: 1 }}
+      id="outlined-basic"
+      label={label}
+      variant="outlined"
+    >
       {children}
     </TextField>
   );
