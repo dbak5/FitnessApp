@@ -22,7 +22,7 @@ export const CreateProgramForm: FC<Props> = ({ place }) => {
       <FormControl>
         <Grid container spacing={3}>
           <Grid item xs={12}>
-            <TextInput label="Program" />
+            <TextInput label="Program Name" />
           </Grid>
           <Grid item xs={12}>
             <SearchInputControlledSelect

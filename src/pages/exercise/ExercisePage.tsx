@@ -1,16 +1,14 @@
 import { EditableTable } from "../../components/tables/EditableTable";
 import {
-  ExerciseData,
-  ExerciseColumns,
+  ExerciseLibraryData,
+  ExerciseLibraryColumns,
 } from "../../assets/dummy/ExerciseExample";
 import { FC, PropsWithChildren } from "react";
 import { Box } from "@mui/material";
 import Typography from "@mui/material/Typography";
-import { CreateExerciseForm } from "./content/CreateExerciseForm";
-import { CreateModal } from "../../components/modals/CreateModal";
-//TODO GET THESE WORKING
-import { AddExerciseOptions } from "./content/AddExerciseOptions";
-import { ExerciseDetailContent } from "./content/ExerciseDetailContent";
+import { CreateExerciseForm } from "../../pages/exercise/content/CreateExerciseForm";
+import { AddExerciseOptions } from "../../pages/exercise/content/AddExerciseOptions";
+import { ExerciseDetailContent } from "../../pages/exercise/content/ExerciseDetailContent";
 
 type Props = PropsWithChildren & {};
 
@@ -24,13 +22,13 @@ export const ExercisePage: FC<Props> = () => {
     <Box>
       <Typography variant="h1">Exercise Library</Typography>
       <EditableTable
-        data={ExerciseData}
-        columns={ExerciseColumns}
+        data={ExerciseLibraryData}
+        columns={ExerciseLibraryColumns}
         checkboxSelection={true}
+        addOptions={<AddExerciseOptions />}
+        detailContent={<ExerciseDetailContent />}
+        createForm={<CreateExerciseForm />}
       />
-      <CreateModal>
-        <CreateExerciseForm />
-      </CreateModal>
     </Box>
   );
 };

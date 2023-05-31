@@ -1,28 +1,24 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import {
   DataGrid,
   GridRowId,
-  GridCellModes,
   GridEventListener,
   GridCellModesModel,
 } from "@mui/x-data-grid";
 import { FC, PropsWithChildren } from "react";
-import EditIcon from "@mui/icons-material/Edit";
-import DeleteIcon from "@mui/icons-material/Delete";
-import SaveIcon from "@mui/icons-material/Save";
-import CancelIcon from "@mui/icons-material/Cancel";
-import { AddToCalendarModal } from "../modals/AddToCalendarModal";
-import { ViewDetailModal } from "../modals/ViewDetailModal";
+import { EditableTableToolbar } from "./EditableTableToolbar";
 
 //TODO GET DELETE BUTTON WORKING
 //TODO GET ADD BUTTON WORKING
+//TODO GET CREATE NEW BUTTON WORKING
 
 type Props = PropsWithChildren & {
   data: any[];
   columns: any[];
   checkboxSelection: boolean;
+  addOptions: JSX.Element;
+  detailContent: JSX.Element;
+  createForm: JSX.Element;
 };
 
 interface SelectedCellParams {
@@ -30,111 +26,13 @@ interface SelectedCellParams {
   field: string;
 }
 
-type EditToolbarProps = PropsWithChildren & {
-  selectedCellParams?: SelectedCellParams;
-  cellModesModel: GridCellModesModel;
-  setCellModesModel: (value: GridCellModesModel) => void;
-  cellMode: "view" | "edit";
-  link: string;
-  activity: string;
-  disabled: boolean;
-  addOptions: React.ReactNode;
-  detailOptions: React.ReactNode;
-};
-
-export const EditToolbar: FC<EditToolbarProps> = ({
-  selectedCellParams,
-  cellMode,
-  cellModesModel,
-  setCellModesModel,
-  link,
-  activity,
-  disabled,
-  detailOptions,
-  addOptions,
-}) => {
-  const handleSaveOrEdit = () => {
-    if (!selectedCellParams) {
-      return;
-    }
-    const { id, field } = selectedCellParams;
-    if (cellMode === "edit") {
-      setCellModesModel({
-        ...cellModesModel,
-        [id]: { ...cellModesModel[id], [field]: { mode: GridCellModes.View } },
-      });
-    } else {
-      setCellModesModel({
-        ...cellModesModel,
-        [id]: { ...cellModesModel[id], [field]: { mode: GridCellModes.Edit } },
-      });
-    }
-  };
-
-  const handleCancel = () => {
-    if (!selectedCellParams) {
-      return;
-    }
-    const { id, field } = selectedCellParams;
-    setCellModesModel({
-      ...cellModesModel,
-      [id]: {
-        ...cellModesModel[id],
-        [field]: { mode: GridCellModes.View, ignoreModifications: true },
-      },
-    });
-  };
-
-  const handleMouseDown = (event: React.MouseEvent) => {
-    // Keep the focus in the cell
-    event.preventDefault();
-  };
-
-  return (
-    <Box
-      sx={{
-        borderBottom: 1,
-        borderColor: "divider",
-        p: 1,
-      }}
-    >
-      <Button
-        onClick={handleSaveOrEdit}
-        onMouseDown={handleMouseDown}
-        disabled={!selectedCellParams}
-      >
-        {cellMode === "edit" ? <SaveIcon /> : <EditIcon />}
-      </Button>
-      <Button
-        onClick={handleCancel}
-        onMouseDown={handleMouseDown}
-        disabled={cellMode === "view"}
-        sx={{ ml: 1 }}
-      >
-        <CancelIcon />
-      </Button>
-
-      <Button sx={{ ml: 1 }} disabled={!selectedCellParams}>
-        <DeleteIcon />
-      </Button>
-      <AddToCalendarModal disabled={!selectedCellParams}>
-        {addOptions}
-      </AddToCalendarModal>
-      <ViewDetailModal
-        link={link}
-        activity={activity}
-        disabled={!selectedCellParams}
-      >
-        {detailOptions}
-      </ViewDetailModal>
-    </Box>
-  );
-};
-
 export const EditableTable: FC<Props> = ({
   data,
   columns,
   checkboxSelection,
+  addOptions,
+  detailContent,
+  createForm,
 }) => {
   const [selectedCellParams, setSelectedCellParams] =
     React.useState<SelectedCellParams | null>(null);
@@ -186,7 +84,7 @@ export const EditableTable: FC<Props> = ({
         onCellEditStop={handleCellEditStop}
         onCellModesModelChange={(model) => setCellModesModel(model)}
         slots={{
-          toolbar: EditToolbar,
+          toolbar: EditableTableToolbar,
         }}
         slotProps={{
           toolbar: {
@@ -195,6 +93,9 @@ export const EditableTable: FC<Props> = ({
             setSelectedCellParams,
             cellModesModel,
             setCellModesModel,
+            addOptions,
+            detailContent,
+            createForm,
           },
           cell: {
             onFocus: handleCellFocus,

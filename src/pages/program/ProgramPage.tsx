@@ -6,10 +6,6 @@ import { ProgramDetailContent } from "./content/ProgramDetailContent";
 import { FC, PropsWithChildren } from "react";
 import { Box } from "@mui/material";
 import Typography from "@mui/material/Typography";
-import { CreateModal } from "../../components/modals/CreateModal";
-import { AddToCalendarModal } from "../../components/modals/AddToCalendarModal";
-import { EditButton } from "../../components/buttons/EditButton";
-import { ViewDetailModal } from "../../components/modals/ViewDetailModal";
 
 type Props = PropsWithChildren & {};
 
@@ -19,7 +15,6 @@ type Props = PropsWithChildren & {};
 //TO DO: how can we calculate or add in deload week
 
 export const ProgramPage: FC<Props> = () => {
-  const activity = "program";
   return (
     <Box>
       <Typography variant="h1">Program Library</Typography>
@@ -27,14 +22,10 @@ export const ProgramPage: FC<Props> = () => {
         data={ProgramList}
         columns={ProgramColumns}
         checkboxSelection={false}
+        addOptions={<AddProgramOptions />}
+        detailContent={<ProgramDetailContent />}
+        createForm={<CreateProgramForm place={"library"} />}
       />
-      <CreateModal>
-        <CreateProgramForm place={"library"} />
-      </CreateModal>
-      <AddToCalendarModal disabled={false}>
-        <AddProgramOptions />
-      </AddToCalendarModal>
-      <EditButton link="/editprogram" activity={activity} />
     </Box>
   );
 };

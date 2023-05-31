@@ -3,7 +3,6 @@ import { AppModal } from "../../components/modals/AppModal";
 import { EditButton } from "../../components/buttons/EditButton";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-
 type Props = PropsWithChildren & {
   activity: string;
   link: string;
@@ -11,6 +10,7 @@ type Props = PropsWithChildren & {
 };
 
 //TODO need to work out how to make this generic for program and exercise
+//TODO turn into editable table
 
 export const ViewDetailModal: FC<Props> = ({
   children,
