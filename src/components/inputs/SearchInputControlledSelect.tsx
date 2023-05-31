@@ -9,13 +9,12 @@ type Props = PropsWithChildren & {
 };
 
 export const SearchInputControlledSelect: FC<Props> = ({ label, options }) => {
-  const [value, setValue] = React.useState(options[0]);
+  const [setValue] = React.useState(options[0]);
   const [inputValue, setInputValue] = React.useState("");
 
   return (
     <Box>
       <Autocomplete
-        value={value}
         onChange={(event, newValue) => {
           setValue(newValue);
         }}

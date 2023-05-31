@@ -16,7 +16,7 @@ export const ListTable: FC<Props> = ({ data, columns, checkboxSelection }) => {
         columns={columns}
         initialState={{
           pagination: {
-            paginationModel: { page: 0, pageSize: 5 },
+            paginationModel: {},
           },
         }}
         pageSizeOptions={[5, 10]}

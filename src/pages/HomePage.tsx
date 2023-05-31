@@ -7,8 +7,8 @@ import { StartWorkoutButton } from "../components/buttons/StartWorkoutButton";
 import { AddModal } from "../components/modals/AddModal";
 import {
   ExerciseData,
-  ExerciseColumns,
-  ExerciseList as ExerciseListSimple,
+  ExerciseList,
+  AddExerciseColumns,
 } from "../assets/dummy/ExerciseExample";
 import {
   ProgramList,
@@ -20,7 +20,6 @@ import { AddExerciseOptions } from "./exercise/content/AddExerciseOptions";
 
 type Props = PropsWithChildren & {};
 
-//TO DO: Only show program button if there is no workout in the calendar
 export const HomePage: FC<Props> = () => {
   return (
     <Box>
@@ -30,10 +29,10 @@ export const HomePage: FC<Props> = () => {
       <StartWorkoutButton />
       <AddModal
         label="Add exercise"
-        options={ExerciseListSimple}
+        options={ExerciseList}
         data={ExerciseData}
-        columns={ExerciseColumns}
-        checkboxSelection={true}
+        columns={AddExerciseColumns}
+        checkboxSelection={false}
         place="calendar"
       >
         <AddExerciseOptions />

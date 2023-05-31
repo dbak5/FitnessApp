@@ -160,6 +160,16 @@ export const ExerciseList = [
   "Snatch pull",
 ];
 
+export const AddExerciseColumns = [
+  { field: "exerciseName", headerName: "Exercise", width: 130 },
+  { field: "equipment", headerName: "Equipment", width: 130 },
+  {
+    field: "lastActivity",
+    headerName: "Last Activity",
+    width: 130,
+  },
+  { field: "pb", headerName: "PB", width: 90 },
+];
 export const CategoryList = ["Bodybuilding", "Weightlifting", "Conditioning"];
 
 export const EquipmentList = ["BB", "DB", "KB"];

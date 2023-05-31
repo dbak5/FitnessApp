@@ -17,8 +17,18 @@ export const ProgramColumns = [
 export const ColumnsProgramExample = [
   { field: "programName", headerName: "Name", width: 300 },
   { field: "exerciseName", headerName: "Exercise", width: 130 },
-  { field: "sets", headerName: "Sets", type: "number", width: 70 },
-  { field: "reps", headerName: "Reps", type: "number", width: 70 },
+  {
+    field: "sets",
+    headerName: "Sets",
+    type: "number",
+    width: 70,
+  },
+  {
+    field: "reps",
+    headerName: "Reps",
+    type: "number",
+    width: 70,
+  },
   { field: "equipment", headerName: "Equipment", width: 130 },
 ];
 
@@ -149,4 +159,32 @@ export const ProgramDetailColumns = [
   { field: "sets", headerName: "Sets", type: "number", width: 70 },
   { field: "reps", headerName: "Reps", type: "number", width: 70 },
   { field: "equipment", headerName: "Equipment", width: 130 },
+];
+
+export const CreateProgramColumns = [
+  { field: "week", headerName: "Week", width: 70, editable: true },
+  { field: "day", headerName: "Day", width: 70, editable: true },
+  { field: "exerciseName", headerName: "Exercise", width: 130, editable: true },
+  { field: "equipment", headerName: "Equipment", width: 130, editable: true },
+  {
+    field: "sets",
+    headerName: "Sets",
+    type: "number",
+    width: 70,
+    editable: true,
+  },
+  {
+    field: "reps",
+    headerName: "Reps",
+    type: "number",
+    width: 70,
+    editable: true,
+  },
+];
+
+export const CreateProgramExample = [
+  {
+    id: 1,
+    exerciseName: "",
+  },
 ];
