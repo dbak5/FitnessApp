@@ -18,7 +18,7 @@ const style = {
 
 type Props = PropsWithChildren & {
   label: string;
-  disabled: boolean;
+  disabled?: boolean;
 };
 
 export const AppModal: FC<Props> = ({ label, children, disabled }) => {

@@ -56,3 +56,23 @@ export const WorkoutExample = [
     pbDate: "20/02/2023",
   },
 ];
+
+export const WorkoutColumnsExample = [
+  { field: "exerciseName", headerName: "Exercise", width: 130 },
+  {
+    field: "sets",
+    headerName: "Sets",
+    type: "number",
+    width: 70,
+    editable: true,
+  },
+  {
+    field: "reps",
+    headerName: "Reps",
+    type: "number",
+    width: 70,
+    editable: true,
+  },
+  { field: "equipment", headerName: "Equipment", width: 130 },
+  { field: "notes", headerName: "Notes", width: 130, editable: true },
+];

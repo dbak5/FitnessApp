@@ -25,6 +25,10 @@ export const ProgramPage: FC<Props> = () => {
         addOptions={<AddProgramOptions />}
         detailContent={<ProgramDetailContent />}
         createForm={<CreateProgramForm place={"library"} />}
+        saveButton
+        addToCalendarModal
+        viewDetailModal
+        createModal
       />
     </Box>
   );

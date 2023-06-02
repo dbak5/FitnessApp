@@ -17,9 +17,14 @@ type Props = PropsWithChildren & {
   data: any[];
   columns: any[];
   checkboxSelection: boolean;
-  addOptions: JSX.Element;
-  detailContent: JSX.Element;
-  createForm: JSX.Element;
+  addOptions?: JSX.Element;
+  detailContent?: JSX.Element;
+  createForm?: JSX.Element;
+  saveButton?: boolean;
+  addToCalendarModal?: boolean;
+  addToWorkoutModal?: boolean;
+  viewDetailModal?: boolean;
+  createModal?: boolean;
 };
 
 interface SelectedCellParams {
@@ -34,6 +39,11 @@ export const EditableTable: FC<Props> = ({
   addOptions,
   detailContent,
   createForm,
+  saveButton,
+  addToWorkoutModal,
+  addToCalendarModal,
+  createModal,
+  viewDetailModal,
 }) => {
   const [selectedCellParams, setSelectedCellParams] =
     React.useState<SelectedCellParams | null>(null);
@@ -97,6 +107,11 @@ export const EditableTable: FC<Props> = ({
             addOptions,
             detailContent,
             createForm,
+            saveButton,
+            addToCalendarModal,
+            addToWorkoutModal,
+            viewDetailModal,
+            createModal,
           },
           cell: {
             onFocus: handleCellFocus,

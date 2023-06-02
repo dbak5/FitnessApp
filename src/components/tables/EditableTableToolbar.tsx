@@ -7,9 +7,10 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import SaveIcon from "@mui/icons-material/Save";
 import CancelIcon from "@mui/icons-material/Cancel";
-import { AddToCalendarModal } from "../../components/modals/AddToCalendarModal";
+import { AddToCalendarModal } from "../modals/AddToCalendarModal";
 import { ViewDetailModal } from "../../components/modals/ViewDetailModal";
 import { CreateModal } from "../../components/modals/CreateModal";
+import { AddToWorkoutModal } from "../modals/AddToWorkoutModal";
 
 interface SelectedCellParams {
   id: GridRowId;
@@ -23,11 +24,16 @@ type EditToolbarProps = PropsWithChildren & {
   cellMode: "view" | "edit";
   link: string;
   activity: string;
-  disabled: boolean;
+  disabled?: boolean;
   page: "exercise" | "program";
-  addOptions: JSX.Element;
-  detailContent: JSX.Element;
-  createForm: JSX.Element;
+  addOptions?: JSX.Element;
+  detailContent?: JSX.Element;
+  createForm?: JSX.Element;
+  saveButton?: boolean;
+  addToCalendarModal?: boolean;
+  addToWorkoutModal?: boolean;
+  viewDetailModal?: boolean;
+  createModal?: boolean;
 };
 
 export const EditableTableToolbar: FC<EditToolbarProps> = ({
@@ -41,6 +47,11 @@ export const EditableTableToolbar: FC<EditToolbarProps> = ({
   addOptions,
   detailContent,
   createForm,
+  saveButton,
+  addToWorkoutModal,
+  addToCalendarModal,
+  viewDetailModal,
+  createModal,
 }) => {
   const handleSaveOrEdit = () => {
     if (!selectedCellParams) {
@@ -87,13 +98,15 @@ export const EditableTableToolbar: FC<EditToolbarProps> = ({
         p: 1,
       }}
     >
-      <Button
-        onClick={handleSaveOrEdit}
-        onMouseDown={handleMouseDown}
-        disabled={!selectedCellParams}
-      >
-        {cellMode === "edit" ? <SaveIcon /> : <EditIcon />}
-      </Button>
+      {saveButton && (
+        <Button
+          onClick={handleSaveOrEdit}
+          onMouseDown={handleMouseDown}
+          disabled={!selectedCellParams}
+        >
+          {cellMode === "edit" ? <SaveIcon /> : <EditIcon />}
+        </Button>
+      )}
 
       <Button
         onClick={handleCancel}
@@ -107,19 +120,26 @@ export const EditableTableToolbar: FC<EditToolbarProps> = ({
       <Button sx={{ ml: 1 }} disabled={!selectedCellParams}>
         <DeleteIcon />
       </Button>
-      <AddToCalendarModal disabled={!selectedCellParams}>
-        {addOptions}
-      </AddToCalendarModal>
 
-      <ViewDetailModal
-        link={link}
-        activity={activity}
-        disabled={!selectedCellParams}
-      >
-        {detailContent}
-      </ViewDetailModal>
+      {addToCalendarModal && (
+        <AddToCalendarModal disabled={!selectedCellParams}>
+          {addOptions}
+        </AddToCalendarModal>
+      )}
 
-      <CreateModal>{createForm}</CreateModal>
+      {addToWorkoutModal && <AddToWorkoutModal>{addOptions}</AddToWorkoutModal>}
+
+      {viewDetailModal && (
+        <ViewDetailModal
+          link={link}
+          activity={activity}
+          disabled={!selectedCellParams}
+        >
+          {detailContent}
+        </ViewDetailModal>
+      )}
+
+      {createModal && <CreateModal>{createForm}</CreateModal>}
     </Box>
   );
 };

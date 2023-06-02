@@ -28,6 +28,10 @@ export const ExercisePage: FC<Props> = () => {
         addOptions={<AddExerciseOptions />}
         detailContent={<ExerciseDetailContent />}
         createForm={<CreateExerciseForm />}
+        saveButton
+        addToCalendarModal
+        viewDetailModal
+        createModal
       />
     </Box>
   );

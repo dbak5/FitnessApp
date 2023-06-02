@@ -1,16 +1,35 @@
 import Box from "@mui/material/Box";
 import { FC, PropsWithChildren } from "react";
 import Typography from "@mui/material/Typography";
+import { EditableTable } from "../../components/tables/EditableTable";
+import {
+  WorkoutColumnsExample,
+  WorkoutExample,
+} from "../../assets/dummy/WorkoutExample";
+import { AddWorkoutOptions } from "./content/AddWorkoutOptions";
+import { ExerciseDetailContent } from "../exercise/content/ExerciseDetailContent";
+import { Button } from "@mui/material";
 
 type Props = PropsWithChildren & {};
 
-export const WorkoutSessionPage: FC<Props> = ({ children }) => {
+// TO DO: Somehow denote if there is a failed or made lift
+
+export const WorkoutSessionPage: FC<Props> = () => {
   return (
     <Box>
       <Typography variant="body1">
-        TO DO: Somehow denote if there is a failed or made lift
+        <EditableTable
+          data={WorkoutExample}
+          columns={WorkoutColumnsExample}
+          checkboxSelection={false}
+          addOptions={<AddWorkoutOptions />}
+          detailContent={<ExerciseDetailContent />}
+          saveButton
+          addToWorkoutModal
+          viewDetailModal
+        ></EditableTable>
       </Typography>
-      {children}
+      <Button>Complete workout</Button>
     </Box>
   );
 };

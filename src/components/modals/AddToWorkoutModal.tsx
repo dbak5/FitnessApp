@@ -4,20 +4,18 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import { AddButton } from "../buttons/AddButton";
 
-type Props = PropsWithChildren & {
-  disabled: boolean;
-};
+type Props = PropsWithChildren & {};
 
-export const AddToCalendarModal: FC<Props> = ({ children, disabled }) => {
+export const AddToWorkoutModal: FC<Props> = ({ children }) => {
   return (
-    <AppModal label="Add to calendar" disabled={disabled}>
+    <AppModal label="Add exercise">
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={3}>
           <Grid item xs={12}>
             {children}
           </Grid>
           <Grid item xs={12}>
-            <AddButton place="calendar" />
+            <AddButton place="workout" />
           </Grid>
         </Grid>
       </Box>
