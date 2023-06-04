@@ -2,7 +2,7 @@ import FormControl from "@mui/material/FormControl";
 import { SearchInputControlledSelect } from "../../../components/inputs/SearchInputControlledSelect";
 import { CategoryList } from "../../../assets/dummy/ExerciseExample";
 import { FC, PropsWithChildren } from "react";
-import { Box, TextField } from "@mui/material";
+import { TextField } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import {
   CreateProgramColumns,
@@ -21,39 +21,37 @@ type Props = PropsWithChildren & {
 
 export const CreateProgramForm: FC<Props> = ({ place }) => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <FormControl>
-        <Grid container spacing={3}>
-          <Grid item xs={12}>
-            <TextField label="Program Name" />
-          </Grid>
-          <Grid item xs={12}>
-            <SearchInputControlledSelect
-              label="Category"
-              options={CategoryList}
-            />
-          </Grid>
-          {/* <Grid item xs={12}>
+    <FormControl>
+      <Grid container spacing={3}>
+        <Grid item xs={12}>
+          <TextField label="Program Name" />
+        </Grid>
+        <Grid item xs={12}>
+          <SearchInputControlledSelect
+            label="Category"
+            options={CategoryList}
+          />
+        </Grid>
+        {/* <Grid item xs={12}>
             <SearchInputControlledSelect
               label="Equipment"
               options={EquipmentList}
             />
           </Grid> */}
-          {/* <Grid item xs={12}>
+        {/* <Grid item xs={12}>
             <SearchInputMultiSelect label="Body Part" options={BodyPartList} />
           </Grid>
          */}
-          <Grid item xs={12}>
-            <DataGrid
-              rows={CreateProgramExample}
-              columns={CreateProgramColumns}
-            ></DataGrid>
-          </Grid>
-          <Grid item xs={12}>
-            <AddButton place={place} />
-          </Grid>
+        <Grid item xs={12}>
+          <DataGrid
+            rows={CreateProgramExample}
+            columns={CreateProgramColumns}
+          ></DataGrid>
         </Grid>
-      </FormControl>
-    </Box>
+        <Grid item xs={12}>
+          <AddButton place={place} />
+        </Grid>
+      </Grid>
+    </FormControl>
   );
 };

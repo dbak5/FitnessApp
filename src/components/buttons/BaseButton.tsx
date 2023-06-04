@@ -14,6 +14,7 @@ type Props = PropsWithChildren & {
   onClick?: () => void;
   onMouseDown?: (event: React.MouseEvent) => void;
   disabled?: boolean;
+  label?: string;
 };
 
 export const BaseButton: FC<Props> = ({
@@ -22,6 +23,7 @@ export const BaseButton: FC<Props> = ({
   onClick,
   onMouseDown,
   disabled,
+  label,
 }) => {
   return (
     <Button
@@ -31,6 +33,7 @@ export const BaseButton: FC<Props> = ({
       onMouseDown={onMouseDown}
       disabled={disabled}
     >
+      {label}
       {children}
     </Button>
   );

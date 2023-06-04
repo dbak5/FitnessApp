@@ -4,7 +4,6 @@ import {
   ColumnsProgramExample,
 } from "../../assets/dummy/ProgramExample";
 import { FC, PropsWithChildren } from "react";
-import { Box } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { SaveButton } from "../../components/buttons/SaveButton";
 
@@ -12,7 +11,7 @@ type Props = PropsWithChildren & {};
 
 export const EditProgramPage: FC<Props> = () => {
   return (
-    <Box>
+    <>
       <Typography variant="h1">Edit Program</Typography>
       <ListTable
         data={ProgramExample}
@@ -20,6 +19,6 @@ export const EditProgramPage: FC<Props> = () => {
         checkboxSelection={false}
       />
       <SaveButton />
-    </Box>
+    </>
   );
 };

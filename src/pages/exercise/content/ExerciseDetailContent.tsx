@@ -4,7 +4,6 @@ import {
   ExerciseDetailColumns,
 } from "../../../assets/dummy/ExerciseExample";
 import { FC, PropsWithChildren } from "react";
-import { Box } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 
@@ -12,7 +11,7 @@ type Props = PropsWithChildren & {};
 
 export const ExerciseDetailContent: FC<Props> = () => {
   return (
-    <Box>
+    <>
       <Grid container spacing={3}>
         <Grid item xs={6}>
           <Typography variant="h4">Exercise:</Typography>
@@ -41,6 +40,6 @@ export const ExerciseDetailContent: FC<Props> = () => {
           />
         </Grid>
       </Grid>
-    </Box>
+    </>
   );
 };

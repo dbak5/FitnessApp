@@ -1,4 +1,3 @@
-import { Box } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { FC, PropsWithChildren } from "react";
 
@@ -10,7 +9,7 @@ type Props = PropsWithChildren & {
 
 export const ListTable: FC<Props> = ({ data, columns, checkboxSelection }) => {
   return (
-    <Box>
+    <>
       <DataGrid
         rows={data}
         columns={columns}
@@ -22,6 +21,6 @@ export const ListTable: FC<Props> = ({ data, columns, checkboxSelection }) => {
         pageSizeOptions={[5, 10]}
         checkboxSelection={checkboxSelection}
       />
-    </Box>
+    </>
   );
 };

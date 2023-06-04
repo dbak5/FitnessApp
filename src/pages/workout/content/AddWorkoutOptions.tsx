@@ -1,5 +1,4 @@
 import { TextField } from "@mui/material";
-import Box from "@mui/material/Box";
 import { FC, PropsWithChildren } from "react";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
@@ -16,7 +15,7 @@ type Props = PropsWithChildren & {};
 
 export const AddWorkoutOptions: FC<Props> = () => {
   return (
-    <Box>
+    <>
       <Grid container spacing={2}>
         <Grid item xs={6}>
           <Typography variant="body1">Exercise</Typography>
@@ -50,6 +49,6 @@ export const AddWorkoutOptions: FC<Props> = () => {
           <SearchInputControlledSelect label="Search" options={EquipmentList} />
         </Grid>
       </Grid>
-    </Box>
+    </>
   );
 };

@@ -1,6 +1,5 @@
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
-import Box from "@mui/material/Box";
 import React, { FC, PropsWithChildren } from "react";
 
 type Props = PropsWithChildren & {
@@ -13,7 +12,7 @@ export const SearchInputControlledSelect: FC<Props> = ({ label, options }) => {
   const [inputValue, setInputValue] = React.useState("");
 
   return (
-    <Box>
+    <>
       <Autocomplete
         onChange={(event, newValue) => {
           setValue(newValue);
@@ -25,6 +24,6 @@ export const SearchInputControlledSelect: FC<Props> = ({ label, options }) => {
         options={options}
         renderInput={(params) => <TextField {...params} label={label} />}
       />
-    </Box>
+    </>
   );
 };

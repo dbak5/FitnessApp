@@ -1,4 +1,3 @@
-import Box from "@mui/material/Box";
 import { FC, PropsWithChildren } from "react";
 import Typography from "@mui/material/Typography";
 import { EditableTable } from "../../components/tables/EditableTable";
@@ -16,7 +15,7 @@ type Props = PropsWithChildren & {};
 
 export const WorkoutSessionPage: FC<Props> = () => {
   return (
-    <Box>
+    <>
       <Typography variant="body1">
         <EditableTable
           data={WorkoutExample}
@@ -30,6 +29,6 @@ export const WorkoutSessionPage: FC<Props> = () => {
         ></EditableTable>
       </Typography>
       <Button>Complete workout</Button>
-    </Box>
+    </>
   );
 };

@@ -90,6 +90,10 @@ export const EditableTableToolbar: FC<EditToolbarProps> = ({
     event.preventDefault();
   };
 
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <Box>
       {saveButton && (
@@ -111,24 +115,34 @@ export const EditableTableToolbar: FC<EditToolbarProps> = ({
       <BaseButton disabled={!selectedCellParams} icon={<DeleteIcon />} />
 
       {addToCalendarModal && (
-        <AddToCalendarModal disabled={!selectedCellParams}>
-          {addOptions}
-        </AddToCalendarModal>
+        <BaseButton
+          onClick={handleOpen}
+          disabled={!selectedCellParams}
+          label={"Add to calendar"}
+        >
+          <AddToCalendarModal>{addOptions}</AddToCalendarModal>
+        </BaseButton>
       )}
 
       {addToWorkoutModal && <AddToWorkoutModal>{addOptions}</AddToWorkoutModal>}
 
       {viewDetailModal && (
-        <ViewDetailModal
-          link={link}
-          activity={activity}
+        <BaseButton
+          onClick={handleOpen}
           disabled={!selectedCellParams}
+          label={"View Detail"}
         >
-          {detailContent}
-        </ViewDetailModal>
+          <ViewDetailModal link={link} activity={activity}>
+            {detailContent}
+          </ViewDetailModal>
+        </BaseButton>
       )}
 
-      {createModal && <CreateModal>{createForm}</CreateModal>}
+      {createModal && (
+        <BaseButton label={"Create new"} onClick={handleOpen}>
+          <CreateModal>{createForm}</CreateModal>
+        </BaseButton>
+      )}
     </Box>
   );
 };

@@ -7,7 +7,6 @@ import {
 } from "@mui/x-data-grid";
 import { FC, PropsWithChildren } from "react";
 import { EditableTableToolbar } from "./EditableTableToolbar";
-import { Box } from "@mui/material";
 
 //TODO GET DELETE BUTTON WORKING
 //TODO GET ADD BUTTON WORKING
@@ -85,7 +84,7 @@ export const EditableTable: FC<Props> = ({
   }, []);
 
   return (
-    <Box>
+    <>
       <DataGrid
         rows={data}
         columns={columns}
@@ -118,6 +117,6 @@ export const EditableTable: FC<Props> = ({
           },
         }}
       />
-    </Box>
+    </>
   );
 };

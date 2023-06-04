@@ -1,4 +1,3 @@
-import { Box } from "@mui/material";
 import { CreateExerciseForm } from "./content/CreateExerciseForm";
 import { FC, PropsWithChildren } from "react";
 import Typography from "@mui/material/Typography";
@@ -9,9 +8,9 @@ type Props = PropsWithChildren & {};
 
 export const CreateExercisePage: FC<Props> = () => {
   return (
-    <Box>
+    <>
       <Typography variant="h1">CREATE EXERCISE</Typography>
       <CreateExerciseForm />
-    </Box>
+    </>
   );
 };

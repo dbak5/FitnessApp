@@ -4,7 +4,6 @@ import {
   ExerciseLibraryColumns,
 } from "../../assets/dummy/ExerciseExample";
 import { FC, PropsWithChildren } from "react";
-import { Box } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { CreateExerciseForm } from "../../pages/exercise/content/CreateExerciseForm";
 import { AddExerciseOptions } from "../../pages/exercise/content/AddExerciseOptions";
@@ -19,7 +18,7 @@ type Props = PropsWithChildren & {};
 
 export const ExercisePage: FC<Props> = () => {
   return (
-    <Box>
+    <>
       <Typography variant="h1">Exercise Library</Typography>
       <EditableTable
         data={ExerciseLibraryData}
@@ -33,6 +32,6 @@ export const ExercisePage: FC<Props> = () => {
         viewDetailModal
         createModal
       />
-    </Box>
+    </>
   );
 };

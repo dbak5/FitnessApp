@@ -4,7 +4,6 @@ import { AddProgramOptions } from "./content/AddProgramOptions";
 import { CreateProgramForm } from "./content/CreateProgramForm";
 import { ProgramDetailContent } from "./content/ProgramDetailContent";
 import { FC, PropsWithChildren } from "react";
-import { Box } from "@mui/material";
 import Typography from "@mui/material/Typography";
 
 type Props = PropsWithChildren & {};
@@ -16,7 +15,7 @@ type Props = PropsWithChildren & {};
 
 export const ProgramPage: FC<Props> = () => {
   return (
-    <Box>
+    <>
       <Typography variant="h1">Program Library</Typography>
       <EditableTable
         data={ProgramList}
@@ -30,6 +29,6 @@ export const ProgramPage: FC<Props> = () => {
         viewDetailModal
         createModal
       />
-    </Box>
+    </>
   );
 };

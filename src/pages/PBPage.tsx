@@ -1,7 +1,6 @@
 import { ListTable } from "../components/tables/ListTable";
 import { PbData, Columns } from "../assets/dummy/PbExample";
 import { FC, PropsWithChildren } from "react";
-import { Box } from "@mui/material";
 import Typography from "@mui/material/Typography";
 
 type Props = PropsWithChildren & {};
@@ -15,9 +14,9 @@ type Props = PropsWithChildren & {};
 
 export const PBPage: FC<Props> = () => {
   return (
-    <Box>
+    <>
       <Typography variant="h1">1 RM PRs</Typography>
       <ListTable data={PbData} columns={Columns} checkboxSelection={false} />
-    </Box>
+    </>
   );
 };

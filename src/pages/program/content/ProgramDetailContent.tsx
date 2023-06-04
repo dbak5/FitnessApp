@@ -5,7 +5,6 @@ import {
 } from "../../../assets/dummy/ProgramExample";
 import Typography from "@mui/material/Typography";
 import { FC, PropsWithChildren } from "react";
-import { Box } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import { NavLink } from "react-router-dom";
 import Button from "@mui/material/Button";
@@ -14,7 +13,7 @@ type Props = PropsWithChildren & {};
 
 export const ProgramDetailContent: FC<Props> = () => {
   return (
-    <Box>
+    <>
       <Grid container spacing={3}>
         <Grid item xs={6}>
           <Typography variant="h4">Program Name:</Typography>
@@ -41,6 +40,6 @@ export const ProgramDetailContent: FC<Props> = () => {
           </Button>
         </Grid>
       </Grid>
-    </Box>
+    </>
   );
 };

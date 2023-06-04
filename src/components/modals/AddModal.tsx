@@ -25,8 +25,8 @@ export const AddModal: FC<Props> = ({
   place,
 }) => {
   return (
-    <BaseModal label={label} disabled={false}>
-      <Box sx={{ flexGrow: 1 }}>
+    <>
+      <BaseModal>
         <Grid container spacing={3}>
           <Grid item xs={12}>
             <SearchInputControlledSelect label="Search" options={options} />
@@ -45,7 +45,7 @@ export const AddModal: FC<Props> = ({
             <AddButton place={place} />
           </Grid>
         </Grid>
-      </Box>
-    </BaseModal>
+      </BaseModal>
+    </>
   );
 };
