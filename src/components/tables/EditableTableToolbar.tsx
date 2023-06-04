@@ -1,6 +1,5 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import { GridRowId, GridCellModes, GridCellModesModel } from "@mui/x-data-grid";
 import { FC, PropsWithChildren } from "react";
 import EditIcon from "@mui/icons-material/Edit";
@@ -11,6 +10,7 @@ import { AddToCalendarModal } from "../modals/AddToCalendarModal";
 import { ViewDetailModal } from "../../components/modals/ViewDetailModal";
 import { CreateModal } from "../../components/modals/CreateModal";
 import { AddToWorkoutModal } from "../modals/AddToWorkoutModal";
+import { BaseButton } from "../buttons/BaseButton";
 
 interface SelectedCellParams {
   id: GridRowId;
@@ -91,35 +91,24 @@ export const EditableTableToolbar: FC<EditToolbarProps> = ({
   };
 
   return (
-    <Box
-      sx={{
-        borderBottom: 1,
-        borderColor: "divider",
-        p: 1,
-      }}
-    >
+    <Box>
       {saveButton && (
-        <Button
+        <BaseButton
           onClick={handleSaveOrEdit}
           onMouseDown={handleMouseDown}
           disabled={!selectedCellParams}
-        >
-          {cellMode === "edit" ? <SaveIcon /> : <EditIcon />}
-        </Button>
+          icon={cellMode === "edit" ? <SaveIcon /> : <EditIcon />}
+        />
       )}
 
-      <Button
+      <BaseButton
         onClick={handleCancel}
         onMouseDown={handleMouseDown}
         disabled={cellMode === "view"}
-        sx={{ ml: 1 }}
-      >
-        <CancelIcon />
-      </Button>
+        icon={<CancelIcon />}
+      />
 
-      <Button sx={{ ml: 1 }} disabled={!selectedCellParams}>
-        <DeleteIcon />
-      </Button>
+      <BaseButton disabled={!selectedCellParams} icon={<DeleteIcon />} />
 
       {addToCalendarModal && (
         <AddToCalendarModal disabled={!selectedCellParams}>

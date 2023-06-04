@@ -8,10 +8,10 @@ type Props = PropsWithChildren & {};
 
 export const PageLayout: FC<Props> = ({ children }) => {
   return (
-    <Box>
+    <>
       <Header />
       <PageContainer>{children}</PageContainer>
       <Footer />
-    </Box>
+    </>
   );
 };

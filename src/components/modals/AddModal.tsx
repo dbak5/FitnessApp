@@ -1,5 +1,5 @@
 import { FC, PropsWithChildren } from "react";
-import { AppModal } from "../../components/modals/AppModal";
+import { BaseModal } from "./BaseModal";
 import { SearchInputControlledSelect } from "../../components/inputs/SearchInputControlledSelect";
 import { ListTable } from "../../components/tables/ListTable";
 import { AddButton } from "../../components/buttons/AddButton";
@@ -25,7 +25,7 @@ export const AddModal: FC<Props> = ({
   place,
 }) => {
   return (
-    <AppModal label={label} disabled={false}>
+    <BaseModal label={label} disabled={false}>
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={3}>
           <Grid item xs={12}>
@@ -46,6 +46,6 @@ export const AddModal: FC<Props> = ({
           </Grid>
         </Grid>
       </Box>
-    </AppModal>
+    </BaseModal>
   );
 };

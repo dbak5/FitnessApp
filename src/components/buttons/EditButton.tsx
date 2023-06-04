@@ -1,6 +1,6 @@
-import Button from "@mui/material/Button";
 import { NavLink } from "react-router-dom";
 import { FC, PropsWithChildren } from "react";
+import { BaseLinkButton } from "./BaseLinkButton";
 
 type Props = PropsWithChildren & {
   link: string;
@@ -9,8 +9,8 @@ type Props = PropsWithChildren & {
 
 export const EditButton: FC<Props> = ({ link, activity }) => {
   return (
-    <Button component={NavLink} to={link}>
+    <BaseLinkButton component={NavLink} link={link}>
       Edit {activity}
-    </Button>
+    </BaseLinkButton>
   );
 };

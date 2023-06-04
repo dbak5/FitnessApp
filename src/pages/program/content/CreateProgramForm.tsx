@@ -1,9 +1,8 @@
 import FormControl from "@mui/material/FormControl";
-import { TextInput } from "../../../components/inputs/TextInput";
 import { SearchInputControlledSelect } from "../../../components/inputs/SearchInputControlledSelect";
 import { CategoryList } from "../../../assets/dummy/ExerciseExample";
 import { FC, PropsWithChildren } from "react";
-import { Box } from "@mui/material";
+import { Box, TextField } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import {
   CreateProgramColumns,
@@ -26,7 +25,7 @@ export const CreateProgramForm: FC<Props> = ({ place }) => {
       <FormControl>
         <Grid container spacing={3}>
           <Grid item xs={12}>
-            <TextInput label="Program Name" />
+            <TextField label="Program Name" />
           </Grid>
           <Grid item xs={12}>
             <SearchInputControlledSelect

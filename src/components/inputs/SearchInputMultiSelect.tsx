@@ -10,10 +10,6 @@ type Props = PropsWithChildren & {
   options: any[];
 };
 
-//TODO MAKE THESE THEIR OWN COMPONENTS
-const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
-const checkedIcon = <CheckBoxIcon fontSize="small" />;
-
 export const SearchInputMultiSelect: FC<Props> = ({ label, options }) => {
   return (
     <Autocomplete
@@ -23,12 +19,16 @@ export const SearchInputMultiSelect: FC<Props> = ({ label, options }) => {
       getOptionLabel={(option) => option.title}
       renderOption={(props, option, { selected }) => (
         <li {...props}>
-          <Checkbox icon={icon} checkedIcon={checkedIcon} checked={selected} />
+          <Checkbox
+            icon={<CheckBoxOutlineBlankIcon fontSize="small" />}
+            checkedIcon={<CheckBoxIcon fontSize="small" />}
+            checked={selected}
+          />
           {option.title}
         </li>
       )}
       renderInput={(params) => (
-        <TextField {...params} label={label} placeholder="Favorites" />
+        <TextField {...params} label={label} placeholder="Favourites" />
       )}
     />
   );
