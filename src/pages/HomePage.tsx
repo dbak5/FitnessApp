@@ -16,7 +16,6 @@ import {
 } from "../assets/dummy/ProgramExample";
 import { AddProgramOptions } from "./program/content/AddProgramOptions";
 import { AddExerciseOptions } from "./exercise/content/AddExerciseOptions";
-import { BaseButton } from "../components/buttons/BaseButton";
 
 type Props = PropsWithChildren & {};
 
@@ -27,18 +26,17 @@ export const HomePage: FC<Props> = () => {
       <MonthDatePicker label="Pick date" />
       <WorkoutCalendarTable />
       <StartWorkoutButton />
-      <BaseButton label="Add exercise">
-        <AddModal
-          label="Add exercise"
-          options={ExerciseList}
-          data={ExerciseData}
-          columns={AddExerciseColumns}
-          checkboxSelection={false}
-          place="calendar"
-        >
-          <AddExerciseOptions />
-        </AddModal>
-      </BaseButton>
+
+      <AddModal
+        label="Add exercise"
+        options={ExerciseList}
+        data={ExerciseData}
+        columns={AddExerciseColumns}
+        checkboxSelection={false}
+        place="calendar"
+      >
+        <AddExerciseOptions />
+      </AddModal>
       <AddModal
         label="Add program"
         options={ProgramListSimple}

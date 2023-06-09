@@ -26,6 +26,7 @@ type EditToolbarProps = PropsWithChildren & {
   activity: string;
   disabled?: boolean;
   page: "exercise" | "program";
+  label: string;
   addOptions?: JSX.Element;
   detailContent?: JSX.Element;
   createForm?: JSX.Element;
@@ -43,7 +44,7 @@ export const EditableTableToolbar: FC<EditToolbarProps> = ({
   setCellModesModel,
   link,
   activity,
-  disabled,
+  label,
   addOptions,
   detailContent,
   createForm,
@@ -90,10 +91,6 @@ export const EditableTableToolbar: FC<EditToolbarProps> = ({
     event.preventDefault();
   };
 
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
   return (
     <Box>
       {saveButton && (
@@ -115,33 +112,30 @@ export const EditableTableToolbar: FC<EditToolbarProps> = ({
       <BaseButton disabled={!selectedCellParams} icon={<DeleteIcon />} />
 
       {addToCalendarModal && (
-        <BaseButton
-          onClick={handleOpen}
-          disabled={!selectedCellParams}
-          label={"Add to calendar"}
-        >
-          <AddToCalendarModal>{addOptions}</AddToCalendarModal>
-        </BaseButton>
+        <AddToCalendarModal label={"Add to calendar"}>
+          {addOptions}
+        </AddToCalendarModal>
       )}
 
-      {addToWorkoutModal && <AddToWorkoutModal>{addOptions}</AddToWorkoutModal>}
+      {addToWorkoutModal && (
+        <AddToWorkoutModal label={"Add exercise"}>
+          {addOptions}
+        </AddToWorkoutModal>
+      )}
 
       {viewDetailModal && (
-        <BaseButton
-          onClick={handleOpen}
+        <ViewDetailModal
           disabled={!selectedCellParams}
           label={"View Detail"}
+          link={link}
+          activity={activity}
         >
-          <ViewDetailModal link={link} activity={activity}>
-            {detailContent}
-          </ViewDetailModal>
-        </BaseButton>
+          {detailContent}
+        </ViewDetailModal>
       )}
 
       {createModal && (
-        <BaseButton label={"Create new"} onClick={handleOpen}>
-          <CreateModal>{createForm}</CreateModal>
-        </BaseButton>
+        <CreateModal label="Create New">{createForm}</CreateModal>
       )}
     </Box>
   );

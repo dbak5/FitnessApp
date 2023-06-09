@@ -4,7 +4,6 @@ import { SearchInputControlledSelect } from "../../components/inputs/SearchInput
 import { ListTable } from "../../components/tables/ListTable";
 import { AddButton } from "../../components/buttons/AddButton";
 import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
 
 type Props = PropsWithChildren & {
   options: any[];
@@ -26,7 +25,7 @@ export const AddModal: FC<Props> = ({
 }) => {
   return (
     <>
-      <BaseModal>
+      <BaseModal label={label}>
         <Grid container spacing={3}>
           <Grid item xs={12}>
             <SearchInputControlledSelect label="Search" options={options} />

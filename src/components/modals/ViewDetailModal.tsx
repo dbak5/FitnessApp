@@ -6,14 +6,22 @@ import Grid from "@mui/material/Grid";
 type Props = PropsWithChildren & {
   activity: string;
   link: string;
+  disabled: boolean;
+  label: string;
 };
 
 //TODO need to work out how to make this generic for program and exercise
 //TODO turn into editable table
 
-export const ViewDetailModal: FC<Props> = ({ children, activity, link }) => {
+export const ViewDetailModal: FC<Props> = ({
+  children,
+  activity,
+  link,
+  label,
+  disabled,
+}) => {
   return (
-    <BaseModal>
+    <BaseModal label={label} disabled={disabled}>
       <Grid container spacing={3}>
         <Grid item xs={12}>
           {children}

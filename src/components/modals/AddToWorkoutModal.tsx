@@ -3,11 +3,13 @@ import { BaseModal } from "./BaseModal";
 import Grid from "@mui/material/Grid";
 import { AddButton } from "../buttons/AddButton";
 
-type Props = PropsWithChildren & {};
+type Props = PropsWithChildren & {
+  label: string;
+};
 
-export const AddToWorkoutModal: FC<Props> = ({ children }) => {
+export const AddToWorkoutModal: FC<Props> = ({ children, label }) => {
   return (
-    <BaseModal>
+    <BaseModal label={label}>
       <Grid container spacing={3}>
         <Grid item xs={12}>
           {children}
